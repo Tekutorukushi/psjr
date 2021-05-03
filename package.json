@@ -1,0 +1,30 @@
+{
+  "name": "psjr",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/pages/index.tsx",
+  "scripts": {
+    "dev": "next dev",
+    "start": "next start",
+    "build:prod": "NODE_ENV=production next build",
+    "build:dev": "NODE_ENV=development next build",
+    "deploy": ""
+  },
+  "author": "Aviasales",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/react": "^17.0.4",
+    "@types/react-dom": "^17.0.3",
+    "@typescript-eslint/eslint-plugin": "^4.22.0",
+    "@typescript-eslint/parser": "^4.22.0",
+    "eslint": "^7.25.0",
+    "eslint-plugin-react": "^7.23.2",
+    "sass": "^1.32.12",
+    "typescript": "^4.2.4"
+  },
+  "dependencies": {
+    "next": "^10.2.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  }
+}
