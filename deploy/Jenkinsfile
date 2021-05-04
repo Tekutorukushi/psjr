@@ -1,0 +1,41 @@
+pipeline {
+  agent {
+    kubernetes {
+      label "deploy-psjr"
+      defaultContainer "deploy"
+      cloud "kubernetes-deploy"
+    }
+  }
+  options {
+    ansiColor('xterm')
+  }
+  environment {
+    SLACK_CHANNEL = '#psjr'
+  }
+  stages {
+    stage('Checkout SCM') {
+      steps {
+        git branch: Branch, credentialsId: '55efde48-d5e8-4c13-ba9f-c242eb408b66', url: 'git@github.com:KosyanMedia/psjr_frontend.git'
+        script {
+          env.COMMIT_HASH = sh (script: "git log -n 1 --pretty=format:'%H'", returnStdout: true)
+        }
+      }
+    }
+    stage("Deploy") {
+      steps {
+        script {
+          Datacenters.split(",").each  { dc ->
+            stage(dc) {
+              env.DATACENTER = dc
+              withCredentials([kubeconfigContent(credentialsId: "k8s-${dc}", variable: 'KUBECONFIG_CONTENT')]) {
+                wrap([$class: 'BuildUser']) {
+                  sh "/app/k8s-deploy -apps psjr-front"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

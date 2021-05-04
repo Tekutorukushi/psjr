@@ -57,7 +57,7 @@ spec:
         container('docker') {
           script {
             withDockerRegistry([credentialsId: 'docker-hub']) {
-              def dockerImage = docker.build("aviasales/psjr_front", "--build-arg BRANCH=${env.BRANCH_NAME} -f Dockerfile .")
+              def dockerImage = docker.build("aviasales/psjr-front", "--build-arg BRANCH=${env.BRANCH_NAME} -f Dockerfile .")
               dockerImage.push("${env.BRANCH_NAME}-${env.BUILD_NUMBER}")
             }
           }

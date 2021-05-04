@@ -1,0 +1,22 @@
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+  annotations:
+    kubernetes.io/ingress.class: nginx
+    nginx.ingress.kubernetes.io/proxy-body-size: 50m
+    nginx.ingress.kubernetes.io/proxy-connect-timeout: '20'
+    nginx.ingress.kubernetes.io/proxy-read-timeout: '20'
+    nginx.ingress.kubernetes.io/proxy-send-timeout: '20'
+    prometheus.io/scrape: 'true'
+  generation: 1
+  name: psjr-front
+  namespace: marketing
+spec:
+  rules:
+    - host: psjr.$DATACENTER.k8s.int.avs.io
+      http:
+        paths:
+          - backend:
+              serviceName: psjr-front
+              servicePort: 3000
+            path: /
