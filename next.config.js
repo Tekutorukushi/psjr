@@ -1,8 +1,6 @@
-const isProd = process.env.NODE_ENV === 'production';
-
 module.exports = {
-  distDir: 'dist',
+  distDir: "dist",
   typescript: {
-    ignoreBuildErrors: !isProd
-  }
+    ignoreBuildErrors: true,
+  },
 };

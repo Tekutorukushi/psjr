@@ -8,23 +8,53 @@
     "start": "next start",
     "build:prod": "NODE_ENV=production next build",
     "build:dev": "NODE_ENV=development next build",
-    "deploy": ""
+    "lint:code": "eslint src/**/*.{ts,tsx}",
+    "lint:styles": "stylelint src/**/*.scss",
+    "lint:types": "tsc --noEmit"
   },
   "author": "Aviasales",
   "license": "ISC",
   "devDependencies": {
+    "@aviasales/browserslist-config": "^1.0.3",
+    "@aviasales/eslint-plugin": "^2.0.0",
+    "@aviasales/stylelint-plugin": "^1.0.1",
+    "@types/node": "^15.0.1",
     "@types/react": "^17.0.4",
     "@types/react-dom": "^17.0.3",
     "@typescript-eslint/eslint-plugin": "^4.22.0",
     "@typescript-eslint/parser": "^4.22.0",
+    "@yarnpkg/pnpify": "^3.0.0-rc.3",
     "eslint": "^7.25.0",
+    "eslint-import-resolver-node": "^0.3.4",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-import-helpers": "^1.1.0",
     "eslint-plugin-react": "^7.23.2",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "lint-staged": "^10.5.4",
+    "prettier": "^2.2.1",
     "sass": "^1.32.12",
+    "simple-git-hooks": "^2.4.1",
+    "stylelint": "^13.13.1",
     "typescript": "^4.2.4"
   },
   "dependencies": {
     "next": "^10.2.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2"
+  },
+  "browserslist": [
+    "extends @aviasales/browserslist-config"
+  ],
+  "prettier": {
+    "trailingComma": "all",
+    "singleQuote": true
+  },
+  "lint-staged": {
+    "*.{tsx,ts,js,jsx,scss,css,js,json,md}": [
+      "yarn prettier --write"
+    ]
+  },
+  "simple-git-hooks": {
+    "pre-commit": "yarn lint-staged"
   }
 }
