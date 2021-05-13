@@ -3,6 +3,9 @@
     "target": "es5",
     "module": "commonjs",
     "baseUrl": "./src",
+    "paths": {
+      "@app/*": ["./*"]
+    },
     "jsx": "preserve",
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,

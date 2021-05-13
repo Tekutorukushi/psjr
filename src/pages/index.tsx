@@ -1,32 +1,27 @@
-import { NextPage } from 'next';
-import { useRouter } from 'next/router';
+import { GetServerSideProps } from 'next';
+import { allSettled, fork, serialize } from 'effector';
+import { root } from 'effector-root';
 import React from 'react';
 
-import style from './index.module.scss';
-import ContentApi from '../services/ContentApi';
-import { Post } from '../services/ContentApi/interfaces/Post';
+import { indexPageOpen, FeedPage } from '@app/features/feed';
+import { RootProvider } from '@app/ssr';
 
-interface AppProps {
-  posts: Post[]
+interface IndexContainerProps {
+  initialState: object;
 }
-const App: NextPage<AppProps> = ({ posts }) => {
-  const router = useRouter();
-  const {
-    query: { name = 'Username' },
-  } = router;
 
+export default function IndexContainer({ initialState }: IndexContainerProps) {
   return (
-    <>
-      <div className={style.preview}>Hello, {name}</div>
-      <pre>{JSON.stringify(posts, null, 2)}</pre>
-    </>
+    <RootProvider initialState={initialState}>
+      <FeedPage />
+    </RootProvider>
   );
-};
-
-App.getInitialProps = async () => {
-  const posts = await ContentApi.fetchPostsDirectory()
-
-  return { posts }
 }
 
-export default App;
+export const getServerSideProps: GetServerSideProps<IndexContainerProps> = async () => {
+  const scope = fork(root);
+
+  await allSettled(indexPageOpen, { scope });
+
+  return { props: { initialState: serialize(scope) } };
+};

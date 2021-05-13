@@ -1,0 +1,25 @@
+{
+  "presets": ["next/babel"],
+  "plugins": [
+    ["effector/babel-plugin", { "addLoc": true, "reactSsr": true }],
+    [
+      "module-resolver",
+      {
+        "root": ["."],
+        "alias": {
+          "effector": "effector-root"
+        }
+      },
+      "effector-root-alias"
+    ],
+    [
+      "module-resolver",
+      {
+        "root": ["."],
+        "alias": {
+          "@app": "./src"
+        }
+      }
+    ]
+  ]
+}

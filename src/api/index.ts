@@ -1,0 +1,1 @@
+export { requestFx } from './request';

@@ -5,5 +5,21 @@
     "sourceType": "module",
     "project": "tsconfig.json"
   },
-  "extends": ["plugin:@aviasales/config", "plugin:@aviasales/react"]
+  "extends": ["plugin:@aviasales/config", "plugin:@aviasales/react"],
+  "rules": {
+    "react/react-in-jsx-scope": "off",
+    "import-helpers/order-imports": [
+      "warn",
+      {
+        "newlinesBetween": "always",
+        "groups": [
+          "module",
+          "/^@aviasales/",
+          "/^@app/",
+          ["parent", "sibling", "index"]
+        ],
+        "alphabetize": { "order": "ignore", "ignoreCase": true }
+      }
+    ]
+  }
 }
