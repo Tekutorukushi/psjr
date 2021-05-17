@@ -47,6 +47,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                     'virtual:a562df270179e181d728cc226a545dd7388024f6274d25e24eb35ece5b7d15e2fad5c2f69fbb05cd64db9bf22b172747a884c9eade499a157663b3e860ec99b6#npm:2.0.0',
                   ],
                   ['@aviasales/stylelint-plugin', 'npm:1.0.1'],
+                  ['@types/body-scroll-lock', 'npm:2.6.1'],
                   ['@types/lodash', 'npm:4.14.168'],
                   ['@types/node', 'npm:15.0.1'],
                   ['@types/react', 'npm:17.0.4'],
@@ -64,6 +65,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                     'virtual:a562df270179e181d728cc226a545dd7388024f6274d25e24eb35ece5b7d15e2fad5c2f69fbb05cd64db9bf22b172747a884c9eade499a157663b3e860ec99b6#npm:3.0.0-rc.3',
                   ],
                   ['babel-plugin-module-resolver', 'npm:4.1.0'],
+                  ['body-scroll-lock', 'npm:3.1.5'],
                   ['clsx', 'npm:1.1.1'],
                   ['effector', 'npm:21.8.11'],
                   [
@@ -1160,6 +1162,20 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                 packageLocation:
                   './.yarn/cache/@tootallnate-once-npm-1.1.2-0517220057-d030f3fb14.zip/node_modules/@tootallnate/once/',
                 packageDependencies: [['@tootallnate/once', 'npm:1.1.2']],
+                linkType: 'HARD',
+              },
+            ],
+          ],
+        ],
+        [
+          '@types/body-scroll-lock',
+          [
+            [
+              'npm:2.6.1',
+              {
+                packageLocation:
+                  './.yarn/cache/@types-body-scroll-lock-npm-2.6.1-aceee4113f-7cb4ed5ce6.zip/node_modules/@types/body-scroll-lock/',
+                packageDependencies: [['@types/body-scroll-lock', 'npm:2.6.1']],
                 linkType: 'HARD',
               },
             ],
@@ -2787,6 +2803,20 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                 packageLocation:
                   './.yarn/cache/bn.js-npm-5.2.0-11748c0b07-7a73bdbba6.zip/node_modules/bn.js/',
                 packageDependencies: [['bn.js', 'npm:5.2.0']],
+                linkType: 'HARD',
+              },
+            ],
+          ],
+        ],
+        [
+          'body-scroll-lock',
+          [
+            [
+              'npm:3.1.5',
+              {
+                packageLocation:
+                  './.yarn/cache/body-scroll-lock-npm-3.1.5-fbe946063b-e8de58edc0.zip/node_modules/body-scroll-lock/',
+                packageDependencies: [['body-scroll-lock', 'npm:3.1.5']],
                 linkType: 'HARD',
               },
             ],
@@ -10273,6 +10303,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                     'virtual:a562df270179e181d728cc226a545dd7388024f6274d25e24eb35ece5b7d15e2fad5c2f69fbb05cd64db9bf22b172747a884c9eade499a157663b3e860ec99b6#npm:2.0.0',
                   ],
                   ['@aviasales/stylelint-plugin', 'npm:1.0.1'],
+                  ['@types/body-scroll-lock', 'npm:2.6.1'],
                   ['@types/lodash', 'npm:4.14.168'],
                   ['@types/node', 'npm:15.0.1'],
                   ['@types/react', 'npm:17.0.4'],
@@ -10290,6 +10321,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                     'virtual:a562df270179e181d728cc226a545dd7388024f6274d25e24eb35ece5b7d15e2fad5c2f69fbb05cd64db9bf22b172747a884c9eade499a157663b3e860ec99b6#npm:3.0.0-rc.3',
                   ],
                   ['babel-plugin-module-resolver', 'npm:4.1.0'],
+                  ['body-scroll-lock', 'npm:3.1.5'],
                   ['clsx', 'npm:1.1.1'],
                   ['effector', 'npm:21.8.11'],
                   [

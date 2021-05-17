@@ -512,6 +512,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/body-scroll-lock@npm:^2.6.1":
+  version: 2.6.1
+  resolution: "@types/body-scroll-lock@npm:2.6.1"
+  checksum: 7cb4ed5ce6b9d927321e966970b67dfc6cc23836c2eb6b03e0ef6cc4713199ab0f9cbf5a9b56987939b63a0a9e8a2c5678c1d73808e04578446dc3ea24998e32
+  languageName: node
+  linkType: hard
+
 "@types/cacheable-request@npm:^6.0.1":
   version: 6.0.1
   resolution: "@types/cacheable-request@npm:6.0.1"
@@ -1316,6 +1323,13 @@ __metadata:
   version: 5.2.0
   resolution: "bn.js@npm:5.2.0"
   checksum: 7a73bdbba63013a7f9953fbbd6ea3351e4cf36d6fdbb5adf7969fcd65255b9c04f2994b0132d89d74ffe608a0eb5a48322526bee20c0e03e71e502603b420f63
+  languageName: node
+  linkType: hard
+
+"body-scroll-lock@npm:^3.1.5":
+  version: 3.1.5
+  resolution: "body-scroll-lock@npm:3.1.5"
+  checksum: e8de58edc0fd7d483e3971045ff83fe6d722592d5153e9bfc9da2962a179a6522b432a4b35344bc8ae522eec080cc87301ce4ded4878f26254bf42a4f26d27ed
   languageName: node
   linkType: hard
 
@@ -5443,6 +5457,7 @@ fsevents@~2.3.1:
     "@aviasales/browserslist-config": ^1.0.3
     "@aviasales/eslint-plugin": ^2.0.0
     "@aviasales/stylelint-plugin": ^1.0.1
+    "@types/body-scroll-lock": ^2.6.1
     "@types/lodash": ^4.14.168
     "@types/node": ^15.0.1
     "@types/react": ^17.0.4
@@ -5451,6 +5466,7 @@ fsevents@~2.3.1:
     "@typescript-eslint/parser": ^4.22.0
     "@yarnpkg/pnpify": ^3.0.0-rc.3
     babel-plugin-module-resolver: ^4.1.0
+    body-scroll-lock: ^3.1.5
     clsx: ^1.1.1
     effector: ^21.8.11
     effector-react: ^21.3.2

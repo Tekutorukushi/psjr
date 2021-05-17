@@ -1,4 +1,4 @@
-import { useList, useStore } from 'effector-react';
+import { useList, useStore } from 'effector-react/ssr';
 
 import { ArticlePreviewCard } from '@app/features/feed';
 

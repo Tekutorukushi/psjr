@@ -4,18 +4,13 @@ import { root } from 'effector-root';
 import React from 'react';
 
 import { indexPageOpen, FeedPage } from '@app/features/feed';
-import { RootProvider } from '@app/ssr';
 
 interface IndexContainerProps {
   initialState: object;
 }
 
-export default function IndexContainer({ initialState }: IndexContainerProps) {
-  return (
-    <RootProvider initialState={initialState}>
-      <FeedPage />
-    </RootProvider>
-  );
+export default function IndexContainer() {
+  return <FeedPage />;
 }
 
 export const getServerSideProps: GetServerSideProps<IndexContainerProps> = async () => {
