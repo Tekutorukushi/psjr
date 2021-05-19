@@ -3,21 +3,25 @@ import clsx from 'clsx';
 
 import styles from './text.module.scss';
 
+enum TypographyType {
+  'h1',
+  'h2',
+  'h3',
+  'paragraph'
+}
+
 interface TextProps {
   as?: keyof ReactHTML;
   children: ReactNode;
-  weight: 800 | 400;
-  size: 28 | 13;
+  type: TypographyType;
 }
 
-export function Text({ as = 'span', children, weight, size }: TextProps) {
+export function Text({ as = 'span', children, type }: TextProps) {
   return createElement(
     as,
     {
       className: clsx(
-        styles.text,
-        styles[`weight_${weight}`],
-        styles[`size_${size}`],
+        styles[`typography_${type}`],
       ),
     },
     children,

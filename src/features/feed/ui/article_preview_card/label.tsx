@@ -13,7 +13,7 @@ export function Label({ icon, children }: LabelProps) {
   return (
     <div className={styles.label}>
       {createElement(icon, { className: styles.icon })}
-      <Text weight={400} size={13}>
+      <Text type={'paragraph'}>
         {children}
       </Text>
     </div>
