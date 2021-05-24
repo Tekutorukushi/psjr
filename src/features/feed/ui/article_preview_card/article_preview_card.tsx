@@ -34,7 +34,7 @@ export function ArticlePreviewCard({
       </aside>
 
       <header className={styles.header}>
-        <Text weight={800} size={28} as="h2">
+        <Text type={'h2'} as="h2">
           {article.title}
         </Text>
       </header>
