@@ -17,7 +17,7 @@ export interface Links {
   collection: Collection[];
 }
 
-export interface Author {
+export interface AuthorApiModel {
   id: number;
   name: string;
   url: string;
@@ -29,4 +29,3 @@ export interface Author {
   meta: any[];
   _links: Links;
 }
-

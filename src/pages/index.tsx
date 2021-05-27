@@ -18,5 +18,5 @@ export const getServerSideProps: GetServerSideProps<IndexContainerProps> = async
 
   await allSettled(indexPageOpen, { scope });
 
-  return { props: { initialState: serialize(scope) } };
+  return { props: { initialState: serialize(scope, { onlyChanges: true }) } };
 };

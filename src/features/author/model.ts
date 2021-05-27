@@ -1,41 +1,27 @@
-import {
-  createStore,
-  createEvent,
-  createEffect,
-  forward,
-  combine,
-} from 'effector';
+import { createEvent, forward, combine, restore } from 'effector';
 
-import { $feed, fetchFeedFx } from '@app/features/feed';
+import { $feed, fetchFeed } from '@app/features/feed';
 import { pageChanged } from '@app/features/viewer';
 
-import { Author } from './types';
+import { $authors } from '../dictionaries';
 
 const authorPageOpen = createEvent<string>();
 
-const fetchAuthorFx = createEffect(
-  async (slug: string): Promise<Author> => {
-    return { slug, name: 'Varlamov' };
-  },
+const $author = combine(
+  restore(authorPageOpen, null),
+  $authors,
+  (authorSlug, authors) =>
+    authors.find((author) => author.slug === authorSlug) ?? null,
 );
 
-const fetchAuthorArticles = createEvent<string>();
-
-const $author = createStore<Author | null>(null).on(
-  fetchAuthorFx.doneData,
-  (_, author) => author,
+const $articles = combine($feed, $author, (articles, author) =>
+  articles.filter((article) => article.author?.slug === author?.slug),
 );
-
-const $articles = combine([$feed, $author], ([articles, author]) =>
-  articles.filter((article) => article.author.slug === author?.slug),
-);
-
-forward({ from: authorPageOpen, to: [fetchAuthorFx, fetchAuthorArticles] });
 
 forward({
-  from: fetchAuthorArticles,
+  from: authorPageOpen,
   to: [
-    fetchFeedFx.prepend((authorSlug: string) => ({ authorSlug })),
+    fetchFeed.prepend((authorSlug: string) => ({ authorSlug })),
     pageChanged,
   ],
 });

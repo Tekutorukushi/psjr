@@ -1,9 +1,10 @@
-export interface Tag {
+export interface CategoryApiModel {
   id: number;
   count: number;
   description: string;
   link: string;
   name: string;
   slug: string;
-  taxonomy: 'post_tag';
+  taxonomy: string;
+  parent: number;
 }

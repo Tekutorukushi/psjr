@@ -1,9 +1,21 @@
-import { createEffect, createEvent, createStore, forward } from 'effector';
-import { uniqBy } from 'lodash';
+import {
+  combine,
+  createEffect,
+  createEvent,
+  forward,
+  restore,
+  sample,
+} from 'effector';
 
 import { pageChanged } from '@app/features/viewer';
+import { ContentApi } from '@app/api/content_api';
+import {
+  $authors,
+  $countries,
+  $contentTypes,
+} from '@app/features/dictionaries';
 
-import { ArticlePreview } from './types';
+import { normalizeArticle } from './lib/normalize_article';
 
 const indexPageOpen = createEvent();
 
@@ -14,39 +26,29 @@ interface Filters {
   limit?: number;
 }
 
-const fetchFeedFx = createEffect((filters: Filters = {}): ArticlePreview[] => {
-  return [
-    {
-      slug: 'TEST',
-      title: 'HEllo article',
-      author: { slug: 'TEST', name: 'Varlamov' },
-      country: { slug: 'country', name: 'russia' },
-      contentType: { slug: 'podcast', name: 'Podcast' },
-      shortText: 'kjfdlksjflksdjfl kjflkdsjf lkjfsdl',
-      duration: 12,
-      date: Date.now(),
-    },
-    {
-      slug: 'art',
-      title: 'HEllo article 2',
-      author: { slug: 'TEST', name: 'Varlamov' },
-      country: { slug: 'country', name: 'russia' },
-      contentType: { slug: 'podcast', name: 'Podcast' },
-      duration: 15,
-      date: Date.now(),
-    },
-  ];
-});
+const fetchPostsDirectoryFx = createEffect(ContentApi.fetchPostsDirectory);
 
-const $feed = createStore<ArticlePreview[]>([]).on(
-  fetchFeedFx.doneData,
-  (oldArticles, newArticles) =>
-    uniqBy([...oldArticles, ...newArticles], 'slug'),
+const $fetchedPosts = restore(fetchPostsDirectoryFx.doneData, []);
+
+const fetchFeed = createEvent<Filters>();
+
+const $feed = combine(
+  $fetchedPosts,
+  $authors,
+  $countries,
+  $contentTypes,
+  (posts, authors, countries, contentTypes) =>
+    posts.map((post) =>
+      normalizeArticle(post, { authors, contentTypes, countries }),
+    ),
 );
 
 forward({
   from: indexPageOpen,
-  to: [fetchFeedFx.prepend(() => ({ limit: 100 })), pageChanged],
+  to: [fetchFeed, pageChanged],
 });
 
-export { indexPageOpen, $feed, fetchFeedFx };
+// TODO: add filters
+sample({ source: fetchFeed, fn: () => null, target: fetchPostsDirectoryFx });
+
+export { indexPageOpen, $feed, fetchFeed };

@@ -3,11 +3,11 @@ import clsx from 'clsx';
 
 import styles from './text.module.scss';
 
-enum TypographyType {
+export enum TypographyType {
   'h1',
   'h2',
   'h3',
-  'paragraph'
+  'paragraph',
 }
 
 interface TextProps {
@@ -20,9 +20,7 @@ export function Text({ as = 'span', children, type }: TextProps) {
   return createElement(
     as,
     {
-      className: clsx(
-        styles[`typography_${type}`],
-      ),
+      className: clsx(styles[`typography_${type}`]),
     },
     children,
   );

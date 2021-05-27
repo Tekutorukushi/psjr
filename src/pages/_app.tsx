@@ -1,15 +1,17 @@
-import App from 'next/app';
-import type { AppProps, AppContext } from 'next/app';
+import App, { AppProps, AppContext } from 'next/app';
+import { Provider } from 'effector-react/ssr';
 
 import { SearchModal } from '@app/features/search';
-import { RootProvider } from '@app/ssr';
+import { useMergeState } from '@app/ssr';
 
 function PsjrApp({ Component, pageProps }: AppProps) {
+  const scope = useMergeState(pageProps);
+
   return (
-    <RootProvider initialState={pageProps.initialState}>
+    <Provider value={scope}>
       <Component {...pageProps} />
       <SearchModal />
-    </RootProvider>
+    </Provider>
   );
 }
 

@@ -1,6 +1,6 @@
 import Link from 'next/link';
 
-import { Text } from '@app/ui/text';
+import { Text, TypographyType } from '@app/ui/text';
 import { HourglassIcon, PencilIcon } from '@app/ui/icon_12';
 
 import { ArticlePreview } from '../../types';
@@ -19,7 +19,7 @@ export function ArticlePreviewCard({
   return (
     <section className={styles.card}>
       <aside className={styles.bar}>
-        {!hideAuthor && (
+        {!hideAuthor && article.author && (
           <Link
             href={{
               pathname: '/author/[slug]',
@@ -34,7 +34,7 @@ export function ArticlePreviewCard({
       </aside>
 
       <header className={styles.header}>
-        <Text type={'h2'} as="h2">
+        <Text type={TypographyType.h2} as="h2">
           {article.title}
         </Text>
       </header>

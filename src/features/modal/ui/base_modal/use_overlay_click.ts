@@ -12,7 +12,7 @@ export function useOverlayClick({ onClose }: { onClose?: () => void }) {
 
       onClose?.();
     },
-    [],
+    [onClose],
   );
 
   return { contentRef, handleOverlayClick };

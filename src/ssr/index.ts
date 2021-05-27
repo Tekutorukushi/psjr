@@ -1,1 +1,1 @@
-export { RootProvider } from './root_provider';
+export { useMergeState } from './use_merge_state';

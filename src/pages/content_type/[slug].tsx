@@ -26,5 +26,5 @@ export const getServerSideProps: GetServerSideProps<ContentTypeContainerProps> =
     scope,
   });
 
-  return { props: { initialState: serialize(scope) } };
+  return { props: { initialState: serialize(scope, { onlyChanges: true }) } };
 };

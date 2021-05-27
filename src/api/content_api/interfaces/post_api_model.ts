@@ -1,4 +1,4 @@
-export interface Post {
+export interface PostApiModel {
   id: number;
   date: Date;
   // eslint-disable-next-line camelcase

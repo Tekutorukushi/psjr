@@ -20,5 +20,5 @@ export const getServerSideProps: GetServerSideProps<AuthorContainerProps> = asyn
 
   await allSettled(authorPageOpen, { params: query.slug as string, scope });
 
-  return { props: { initialState: serialize(scope) } };
+  return { props: { initialState: serialize(scope, { onlyChanges: true }) } };
 };
