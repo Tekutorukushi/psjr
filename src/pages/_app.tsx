@@ -1,11 +1,24 @@
 import App, { AppProps, AppContext } from 'next/app';
+import { fork, Scope, serialize } from 'effector';
 import { Provider } from 'effector-react/ssr';
+import { root } from 'effector-root';
 
 import { SearchModal } from '@app/features/search';
-import { useMergeState } from '@app/ssr';
+import { isBrowser } from '@app/lib/is_browser';
+
+let clientScope: Scope;
 
 function PsjrApp({ Component, pageProps }: AppProps) {
-  const scope = useMergeState(pageProps);
+  const scope = fork(root, {
+    values: {
+      ...(clientScope ? serialize(clientScope, { onlyChanges: true }) : {}),
+      ...(pageProps.initialState ?? {}),
+    },
+  });
+
+  if (isBrowser()) {
+    clientScope = scope;
+  }
 
   return (
     <Provider value={scope}>
