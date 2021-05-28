@@ -1,4 +1,4 @@
-import { createEvent, createEffect, forward, restore, combine } from 'effector';
+import { forward, restore, combine } from 'effector';
 
 import { pageChanged } from '@app/features/viewer';
 import {
@@ -8,10 +8,11 @@ import {
 } from '@app/features/dictionaries';
 import { normalizeArticle } from '@app/features/feed';
 import { ContentApi } from '@app/api/content_api';
+import { root } from '@app/lib/root_domain';
 
-const articlePageOpen = createEvent<string>();
+const articlePageOpen = root.createEvent<string>();
 
-const fetchPostBySlugFx = createEffect(ContentApi.fetchPostBySlug);
+const fetchPostBySlugFx = root.createEffect(ContentApi.fetchPostBySlug);
 
 const $fetchedPost = restore(fetchPostBySlugFx.doneData, null);
 

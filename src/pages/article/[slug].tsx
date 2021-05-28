@@ -1,9 +1,9 @@
 import React from 'react';
 import { GetServerSideProps } from 'next';
 import { allSettled, fork, serialize } from 'effector';
-import { root } from 'effector-root';
 
 import { ArticlePage, articlePageOpen } from '@app/features/article';
+import { root } from '@app/lib/root_domain';
 
 interface ArticleContainerProps {
   initialState: object;

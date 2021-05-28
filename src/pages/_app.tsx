@@ -1,10 +1,10 @@
 import App, { AppProps, AppContext } from 'next/app';
 import { fork, Scope, serialize } from 'effector';
 import { Provider } from 'effector-react/ssr';
-import { root } from 'effector-root';
 
 import { SearchModal } from '@app/features/search';
 import { isBrowser } from '@app/lib/is_browser';
+import { root } from '@app/lib/root_domain';
 
 let clientScope: Scope;
 

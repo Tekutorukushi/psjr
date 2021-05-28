@@ -1,11 +1,13 @@
-import { createEvent, createStore } from 'effector';
 import { uniq } from 'lodash';
+import { createApi } from 'effector';
 
-const openModal = createEvent<string>();
-const closeModal = createEvent<string>();
+import { root } from '@app/lib/root_domain';
 
-const $openModals = createStore<string[]>([])
-  .on(openModal, (opened, toOpen) => uniq([...opened, toOpen]))
-  .on(closeModal, (opened, toClose) => opened.filter((m) => m !== toClose));
+const $openModals = root.createStore<string[]>([]);
+
+const { openModal, closeModal } = createApi($openModals, {
+  openModal: (opened, toOpen: string) => uniq([...opened, toOpen]),
+  closeModal: (opened, toClose) => opened.filter((m) => m !== toClose),
+});
 
 export { $openModals, openModal, closeModal };

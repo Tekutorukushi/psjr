@@ -7,16 +7,6 @@
       {
         "root": ["."],
         "alias": {
-          "effector": "effector-root"
-        }
-      },
-      "effector-root-alias"
-    ],
-    [
-      "module-resolver",
-      {
-        "root": ["."],
-        "alias": {
           "@app": "./src"
         }
       }

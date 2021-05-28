@@ -72,10 +72,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                     'effector-react',
                     'virtual:a562df270179e181d728cc226a545dd7388024f6274d25e24eb35ece5b7d15e2fad5c2f69fbb05cd64db9bf22b172747a884c9eade499a157663b3e860ec99b6#npm:21.3.2',
                   ],
-                  [
-                    'effector-root',
-                    'virtual:a562df270179e181d728cc226a545dd7388024f6274d25e24eb35ece5b7d15e2fad5c2f69fbb05cd64db9bf22b172747a884c9eade499a157663b3e860ec99b6#npm:1.3.0',
-                  ],
                   ['eslint', 'npm:7.25.0'],
                   ['eslint-import-resolver-node', 'npm:0.3.4'],
                   [
@@ -4521,37 +4517,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                   'effector',
                   'react',
                 ],
-                linkType: 'HARD',
-              },
-            ],
-          ],
-        ],
-        [
-          'effector-root',
-          [
-            [
-              'npm:1.3.0',
-              {
-                packageLocation:
-                  './.yarn/cache/effector-root-npm-1.3.0-66dedf5554-3bd3739f8d.zip/node_modules/effector-root/',
-                packageDependencies: [['effector-root', 'npm:1.3.0']],
-                linkType: 'SOFT',
-              },
-            ],
-            [
-              'virtual:a562df270179e181d728cc226a545dd7388024f6274d25e24eb35ece5b7d15e2fad5c2f69fbb05cd64db9bf22b172747a884c9eade499a157663b3e860ec99b6#npm:1.3.0',
-              {
-                packageLocation:
-                  './.yarn/$$virtual/effector-root-virtual-fced508137/0/cache/effector-root-npm-1.3.0-66dedf5554-3bd3739f8d.zip/node_modules/effector-root/',
-                packageDependencies: [
-                  [
-                    'effector-root',
-                    'virtual:a562df270179e181d728cc226a545dd7388024f6274d25e24eb35ece5b7d15e2fad5c2f69fbb05cd64db9bf22b172747a884c9eade499a157663b3e860ec99b6#npm:1.3.0',
-                  ],
-                  ['@types/effector', null],
-                  ['effector', 'npm:21.8.11'],
-                ],
-                packagePeers: ['@types/effector', 'effector'],
                 linkType: 'HARD',
               },
             ],
@@ -10303,10 +10268,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                   [
                     'effector-react',
                     'virtual:a562df270179e181d728cc226a545dd7388024f6274d25e24eb35ece5b7d15e2fad5c2f69fbb05cd64db9bf22b172747a884c9eade499a157663b3e860ec99b6#npm:21.3.2',
-                  ],
-                  [
-                    'effector-root',
-                    'virtual:a562df270179e181d728cc226a545dd7388024f6274d25e24eb35ece5b7d15e2fad5c2f69fbb05cd64db9bf22b172747a884c9eade499a157663b3e860ec99b6#npm:1.3.0',
                   ],
                   ['eslint', 'npm:7.25.0'],
                   ['eslint-import-resolver-node', 'npm:0.3.4'],

@@ -1,11 +1,11 @@
-import { createEvent, forward, combine, restore } from 'effector';
+import { forward, combine, restore } from 'effector';
 
+import { $authors } from '@app/features/dictionaries';
 import { $feed, fetchFeed } from '@app/features/feed';
 import { pageChanged } from '@app/features/viewer';
+import { root } from '@app/lib/root_domain';
 
-import { $authors } from '../dictionaries';
-
-const authorPageOpen = createEvent<string>();
+const authorPageOpen = root.createEvent<string>();
 
 const $author = combine(
   restore(authorPageOpen, null),

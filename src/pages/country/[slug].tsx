@@ -1,9 +1,9 @@
 import React from 'react';
 import { GetServerSideProps } from 'next';
 import { allSettled, fork, serialize } from 'effector';
-import { root } from 'effector-root';
 
 import { countryPageOpen, CountryPage } from '@app/features/country';
+import { root } from '@app/lib/root_domain';
 
 interface CountryContainerProps {
   initialState: object;

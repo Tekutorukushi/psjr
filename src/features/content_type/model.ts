@@ -1,10 +1,11 @@
-import { combine, createEvent, forward, restore } from 'effector';
+import { combine, forward, restore } from 'effector';
 
-import { $feed, fetchFeed } from '../feed';
-import { pageChanged } from '../viewer';
-import { $contentTypes } from '../dictionaries';
+import { root } from '@app/lib/root_domain';
+import { $feed, fetchFeed } from '@app/features/feed';
+import { pageChanged } from '@app/features/viewer';
+import { $contentTypes } from '@app/features/dictionaries';
 
-const contentTypePageOpen = createEvent<string>();
+const contentTypePageOpen = root.createEvent<string>();
 
 const $contentType = combine(
   restore(contentTypePageOpen, null),

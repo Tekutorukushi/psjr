@@ -1,5 +1,5 @@
-import { createEvent } from 'effector';
+import { root } from '@app/lib/root_domain';
 
-const pageChanged = createEvent<unknown>();
+const pageChanged = root.createEvent<unknown>();
 
 export { pageChanged };

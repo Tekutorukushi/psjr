@@ -1,11 +1,4 @@
-import {
-  combine,
-  createEffect,
-  createEvent,
-  forward,
-  restore,
-  sample,
-} from 'effector';
+import { combine, forward, restore, sample } from 'effector';
 
 import { pageChanged } from '@app/features/viewer';
 import { ContentApi } from '@app/api/content_api';
@@ -14,10 +7,11 @@ import {
   $countries,
   $contentTypes,
 } from '@app/features/dictionaries';
+import { root } from '@app/lib/root_domain';
 
 import { normalizeArticle } from './lib/normalize_article';
 
-const indexPageOpen = createEvent();
+const indexPageOpen = root.createEvent();
 
 interface Filters {
   authorSlug?: string;
@@ -26,11 +20,11 @@ interface Filters {
   limit?: number;
 }
 
-const fetchPostsDirectoryFx = createEffect(ContentApi.fetchPostsDirectory);
+const fetchPostsDirectoryFx = root.createEffect(ContentApi.fetchPostsDirectory);
 
 const $fetchedPosts = restore(fetchPostsDirectoryFx.doneData, []);
 
-const fetchFeed = createEvent<Filters>();
+const fetchFeed = root.createEvent<Filters>();
 
 const $feed = combine(
   $fetchedPosts,
