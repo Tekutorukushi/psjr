@@ -29,7 +29,7 @@ pipeline {
               env.DATACENTER = dc
               withCredentials([kubeconfigContent(credentialsId: "k8s-${dc}", variable: 'KUBECONFIG_CONTENT')]) {
                 wrap([$class: 'BuildUser']) {
-                  sh "/app/k8s-deploy -apps psjr-front"
+                  sh "/app/k8s-deploy -apps \"${Applications}\""
                 }
               }
             }

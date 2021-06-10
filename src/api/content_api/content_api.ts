@@ -1,12 +1,14 @@
 import axios from 'redaxios';
 
+import { getBackendUrl } from '@app/config';
+
 import { PostApiModel } from './interfaces/post_api_model';
 import { AuthorApiModel } from './interfaces/author_api_model';
 import { CategoryApiModel } from './interfaces/category_api_model';
 import { TagApiModel } from './interfaces/tag_api_model';
 
 export default class ContentApi {
-  private static API_PREFIX = 'https://psjradmin.avs.io/wp-json/wp/v2/';
+  private static API_PREFIX = getBackendUrl();
 
   public static fetchPostsDirectory(): Promise<PostApiModel[]> {
     return ContentApi.fetch('posts');

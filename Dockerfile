@@ -1,6 +1,8 @@
 FROM node:14.15.0-alpine
 
 ENV NODE_ENV=production
+ENV SERVER_BACKEND_URL="http://psjr-content-cache/"
+ENV CLIENT_BACKEND_URL="http://psjr-content.aviasales.ru/"
 
 WORKDIR /app
 

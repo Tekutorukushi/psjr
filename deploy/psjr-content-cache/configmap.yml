@@ -1,0 +1,68 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: psjr-content-cache
+  labels:
+    app.kubernetes.io/name: psjr-content-cache
+  namespace: marketing
+data:
+  nginx.conf: |+
+    user  nginx;
+    worker_processes  1;
+
+    error_log  /dev/stderr warn;
+    pid        /var/run/nginx.pid;
+
+    events {
+        worker_connections  1024;
+    }
+
+    http {
+        include       /etc/nginx/mime.types;
+        default_type  application/octet-stream;
+
+        log_format upstreaminfo escape=json '{"proxy_protocol_addr": "$proxy_protocol_addr","remote_addr": "$remote_addr", "real_ip": "$http_x_real_ip", "proxy_add_x_forwarded_for": "$proxy_add_x_forwarded_for", "request_id": "$request_id","remote_user": "$remote_user", "time_local": "$time_local", "request" : "$request", "status": $status, "vhost": "$host","body_bytes_sent": $body_bytes_sent, "http_referer":  "$http_referer", "http_user_agent": "$http_user_agent", "request_length" : $request_length, "request_time" : $request_time,  "upstream_addr": "$upstream_addr",  "upstream_response_length": "$upstream_response_length", "upstream_response_time": "$upstream_response_time", "upstream_status": "$upstream_status", "upstream_cache_status": "$upstream_cache_status"}';
+
+        access_log  /dev/stdout  upstreaminfo;
+
+        sendfile       on;
+        tcp_nopush     on;
+
+        keepalive_timeout  65;
+
+        gzip  on;
+        proxy_cache_path /tmp levels=1:2 keys_zone=WPCACHE:10m max_size=2g inactive=360m use_temp_path=off;
+
+        server {
+            listen 80;
+            server_name _ default;
+
+            charset utf-8;
+
+            location /readyz {
+              return 204;
+            }
+            location /healthz {
+              return 204;
+            }
+
+            location / {
+              proxy_cache WPCACHE;
+              proxy_cache_revalidate on;
+              proxy_cache_valid 200 360m;
+              proxy_cache_min_uses 1;
+              proxy_cache_use_stale error timeout updating http_500 http_502
+                                    http_503 http_504;
+              proxy_cache_background_update on;
+              proxy_cache_lock on;
+
+              proxy_pass https://psjradmin.avs.io/wp-json/wp/v2/;
+              proxy_set_header X-Forwarded-Host $host;
+              proxy_set_header Host psjradmin.avs.io;
+
+            }
+
+            gunzip on;
+            gzip_static always;
+        }
+    }

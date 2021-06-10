@@ -4,7 +4,7 @@
   "description": "",
   "main": "src/pages/index.tsx",
   "scripts": {
-    "dev": "next dev",
+    "dev": "CLIENT_BACKEND_URL=\"https://psjradmin.avs.io/wp-json/wp/v2/\" next dev",
     "start": "next start",
     "build:prod": "NODE_ENV=production next build",
     "build:dev": "NODE_ENV=development next build",

@@ -15,4 +15,10 @@ module.exports = {
       },
     ];
   },
+  serverRuntimeConfig: {
+    secureBackendUrl: process.env.SERVER_BACKEND_URL,
+  },
+  publicRuntimeConfig: {
+    backendUrl: process.env.CLIENT_BACKEND_URL,
+  },
 };

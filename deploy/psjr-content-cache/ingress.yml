@@ -9,17 +9,17 @@ metadata:
     nginx.ingress.kubernetes.io/proxy-send-timeout: '20'
     prometheus.io/scrape: 'true'
   generation: 1
-  name: psjr-front
+  name: psjr-content-cache-front
   namespace: marketing
 spec:
   rules:
-    - host: psjr.$DATACENTER.k8s.int.avs.io
+    - host: psjr-content-cache.$DATACENTER.k8s.int.avs.io
       http:
         paths:
           - path: /
             pathType: Prefix
             backend:
               service:
-                name: psjr-front
+                name: psjr-content-cache
                 port:
-                  number: 3000
+                  number: 80

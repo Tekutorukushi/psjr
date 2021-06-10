@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: psjr-content-cache
+  name: psjr-content-cache
+  namespace: marketing
+spec:
+  ports:
+    - port: 80
+      protocol: TCP
+      targetPort: 80
+  selector:
+    app: psjr-content-cache
+  sessionAffinity: None
+  type: ClusterIP
