@@ -1,11 +1,12 @@
 import Link from 'next/link';
-
+import { GaloButton } from '@app/ui/galo-button';
 import { Text, TypographyType } from '@app/ui/text';
 import { HourglassIcon, PencilIcon } from '@app/ui/icon_12';
-
+import { Avatar } from '@app/ui/avatar'
 import { ArticlePreview } from '../../types';
 import styles from './article_preview_card.module.scss';
 import { Label } from './label';
+import { DownloadIcon, LikeIcon, ShareIcon } from '@app/ui/icons'
 
 interface ArticlePreviewCardProps {
   article: ArticlePreview;
@@ -26,11 +27,12 @@ export function ArticlePreviewCard({
               query: { slug: article.author.slug },
             }}
           >
-            <a>{article.author.name}</a>
+            <Avatar url={'/mock/author.jpg'} />
           </Link>
         )}
-        <span>LIKE</span>
-        <span>SHARE</span>
+        <LikeIcon />
+        <ShareIcon />
+        <DownloadIcon />
       </aside>
 
       <header className={styles.header}>
@@ -54,7 +56,10 @@ export function ArticlePreviewCard({
         <Link
           href={{ pathname: '/article/[slug]', query: { slug: article.slug } }}
         >
-          <a>ЧИТАТЬ/Слушать</a>
+          <GaloButton icon={<ArrowIcon size={'large'} /> }>
+            Читать
+          </GaloButton>
+          {/*<a>ЧИТАТЬ/Слушать</a>*/}
         </Link>
       </footer>
     </section>

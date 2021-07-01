@@ -1,0 +1,52 @@
+@import "../fonts";
+@import "../colors";
+@import "../misc";
+
+.root {
+  flex-shrink: 0;
+  width: 56px;
+  text-align: center;
+  cursor: pointer;
+}
+.avatar {
+  position: relative;
+  width: 56px;
+  height: 56px;
+  background: no-repeat center/cover;
+  border-radius: 50%;
+  &::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    content: '';
+    border: 2px solid transparent;
+    border-radius: 50%;
+    @include base-transition('border-color');
+  }
+  &:hover::before,
+  &:focus::before {
+    border-color: $button-blue;
+  }
+  &:active::before {
+    border-color: $button-light-blue;
+  }
+}
+.label {
+  font-family: $font;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 140%;
+  color: #fff;
+  letter-spacing: 0.01em;
+  @include base-transition('color');
+  .root:hover &,
+  .root:focus & {
+    color: $button-blue;
+  }
+  .root:active & {
+    color: $button-light-blue;
+  }
+}

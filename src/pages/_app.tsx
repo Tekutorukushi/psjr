@@ -8,6 +8,8 @@ import { root } from '@app/lib/root_domain';
 
 let clientScope: Scope;
 
+import '../index.scss';
+
 function PsjrApp({ Component, pageProps }: AppProps) {
   const scope = fork(root, {
     values: {
