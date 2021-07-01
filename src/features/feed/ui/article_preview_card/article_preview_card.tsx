@@ -1,12 +1,15 @@
 import Link from 'next/link';
+
 import { GaloButton } from '@app/ui/galo-button';
 import { Text, TypographyType } from '@app/ui/text';
-import { HourglassIcon, PencilIcon } from '@app/ui/icon_12';
+import { ArrowIcon, HourglassIcon, PencilIcon } from '@app/ui/icon_12'
 import { Avatar } from '@app/ui/avatar'
+import { DownloadIcon, LikeIcon, ShareIcon } from '@app/ui/icons'
+
 import { ArticlePreview } from '../../types';
 import styles from './article_preview_card.module.scss';
 import { Label } from './label';
-import { DownloadIcon, LikeIcon, ShareIcon } from '@app/ui/icons'
+
 
 interface ArticlePreviewCardProps {
   article: ArticlePreview;
@@ -56,10 +59,9 @@ export function ArticlePreviewCard({
         <Link
           href={{ pathname: '/article/[slug]', query: { slug: article.slug } }}
         >
-          <GaloButton icon={<ArrowIcon size={'large'} /> }>
+          <GaloButton icon={<ArrowIcon size={'large'} /> } onClick={() => {}}>
             Читать
           </GaloButton>
-          {/*<a>ЧИТАТЬ/Слушать</a>*/}
         </Link>
       </footer>
     </section>
