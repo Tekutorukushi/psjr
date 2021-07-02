@@ -1,48 +1,13 @@
-@import "../colors";
-@import "../misc";
-
 .icon {
-  display: block;
-  width: 32px;
-  height: 32px;
-  cursor: pointer;
+	display: block;
+	width: 32px;
+	height: 32px;
 }
-.iconButton {
 
-}
-.fill {
-  fill: #fff;
-  @include base-transition('fill');
-  .iconButton:hover > &,
-  .iconButton:focus > & {
-    fill: $button-blue;
-  }
-  .iconButton:active > & {
-    fill: $font-light-blue;
-  }
-  &:hover,
-  &:focus {
-    fill: $button-blue;
-  }
-  &:active {
-    fill: $font-light-blue;
-  }
-}
-.stroke {
-  stroke: #fff;
-  @include base-transition('stroke');
-  .iconButton:hover > &,
-  .iconButton:focus > & {
-    stroke: $button-blue;
-  }
-  .iconButton:active > & {
-    stroke: $font-light-blue;
-  }
-  &:hover,
-  &:focus {
-    stroke: $button-blue;
-  }
-  &:active {
-    stroke: $font-light-blue;
-  }
+.fill path {
+	fill: #fff;
+	
+	&:hover {
+		fill: var(--blue);
+	}
 }

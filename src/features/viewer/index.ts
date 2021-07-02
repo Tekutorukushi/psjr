@@ -1,1 +1,0 @@
-export { pageChanged } from './model';

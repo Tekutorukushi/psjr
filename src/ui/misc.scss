@@ -1,5 +1,0 @@
-$base-transition-duration: 300ms;
-
-@mixin base-transition($prop: 'all') {
-  transition: #{$prop} $base-transition-duration;
-}
