@@ -1,5 +1,4 @@
-import React from 'react';
-import FeedPage from "./feed/feed";
+import {FeedPage} from "@app/pages/feed";
 
 export default function Home() {
   return (<FeedPage />)

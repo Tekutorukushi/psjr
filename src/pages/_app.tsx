@@ -1,15 +1,18 @@
-import './app.scss'
-import {Header} from "../ui/header/header";
-import {Aside} from "../ui/aside";
+// @ts-ignore
+import {AppProps} from "next/app";
 
-function App({ Component, pageProps }) {
+import {Header} from "@app/ui/header/header";
+import {Aside} from "@app/ui/aside";
+import './app.scss'
+
+function MyApp({ Component, pageProps }: AppProps) {
   return <>
     <Header />
-    <main className='main'>
+    <div className='main'>
       <Component {...pageProps} />
       <Aside />
-    </main>
+    </div>
   </>
 }
 
-export default App
+export default MyApp
