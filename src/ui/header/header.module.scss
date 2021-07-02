@@ -1,0 +1,57 @@
+.header {
+	position: relative;
+	display: grid;
+	grid-template-columns: 1fr minmax(100px, 714px) 1fr;
+	align-items: center;
+	padding: 14px;
+	border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+	
+	.logo {
+		width: 212px;
+		height: 35px;
+		background: url('../../images/logo.png') center / contain no-repeat;
+	}
+	
+	.login {
+		display: flex;
+		gap: 24px;
+		align-items: center;
+		justify-self: flex-end;
+		padding-left: 24px;
+		font-size: 24px;
+		font-weight: 700;
+		line-height: 28px;
+		color: #fff;
+		cursor: pointer;
+		user-select: none;
+		border-left: 1px solid rgba(255, 255, 255, 0.3);
+		transition: color var(--trs-speed);
+		
+		&:hover {
+			color: var(--blue);
+			
+			.icon {
+				background-color: var(--blue);
+			}
+		}
+		
+		&:active {
+			color: var(--light-blue);
+			
+			.icon {
+				background-color: var(--light-blue);
+			}
+		}
+	}
+	
+	.icon {
+		width: 32px;
+		height: 32px;
+		background-color: #fff;
+		-webkit-mask-position: center;
+		-webkit-mask-repeat: no-repeat;
+		-webkit-mask-size: contain;
+		transition: background-color var(--trs-speed);
+		-webkit-mask-image: url('../../images/icons/person.svg');
+	}
+}
