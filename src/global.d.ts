@@ -4,5 +4,5 @@ declare module '*.scss' {
 }
 declare namespace JSX {
     interface Element { }
-    interface IntrinsicElements { header: any; div: any; a: any; span: any; button: any; input: any; }
+    interface IntrinsicElements { header: any; div: any; a: any; span: any; button: any; input: any; svg: any; path: any; }
 }

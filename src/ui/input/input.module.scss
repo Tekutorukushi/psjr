@@ -15,7 +15,7 @@
 		-webkit-mask-repeat: no-repeat;
 		-webkit-mask-size: contain;
 		transition: background-color var(--trs-speed);
-		-webkit-mask-image: url('../../images/icons/search.svg');
+		-webkit-mask-image: url('../../../public/images/icons/search.svg');
 		transform: translateY(-50%);
 		
 		&:hover {

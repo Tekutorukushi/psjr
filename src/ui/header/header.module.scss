@@ -9,7 +9,7 @@
 	.logo {
 		width: 212px;
 		height: 35px;
-		background: url('../../images/logo.png') center / contain no-repeat;
+		background: url('/images/logo.png') center / contain no-repeat;
 	}
 	
 	.login {
@@ -52,6 +52,6 @@
 		-webkit-mask-repeat: no-repeat;
 		-webkit-mask-size: contain;
 		transition: background-color var(--trs-speed);
-		-webkit-mask-image: url('../../images/icons/person.svg');
+		-webkit-mask-image: url('/images/icons/person.svg');
 	}
 }

@@ -1,0 +1,26 @@
+.icon {
+	display: block;
+	width: 32px;
+	height: 32px;
+	cursor: pointer;
+}
+
+.fill {
+	fill: #fff;
+	transition: fill var(--trs-speed);
+	
+	.iconButton:hover > &,
+	.iconButton:focus > & {
+		fill: var(--blue);
+	}
+	.iconButton:active > & {
+		fill: var(--light-blue);
+	}
+	&:hover,
+	&:focus {
+		fill: var(--blue);
+	}
+	&:active {
+		fill: var(--light-blue);
+	}
+}

@@ -1,7 +1,10 @@
 import classes from './feed.module.scss'
+import {FeedArticle} from "@app/ui/feed-article";
 
-export function FeedPage() {
+export const FeedPage = () => {
     return (
-        <div className={classes.feed}>test</div>
+        <div className={classes.feed}>
+            <FeedArticle url={'/mock/author.jpg'} />
+        </div>
     );
 };
