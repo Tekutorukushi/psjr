@@ -4,21 +4,27 @@ import React, { ReactNode } from 'react';
 import style from './button.module.scss';
 
 interface ButtonProps {
-    type?: 'ghost' | 'default' | 'primary' | 'text';
     onClick: void;
     children: React.ReactNode;
-    icon: ReactNode;
 }
 
-export const Button = ({ children, type='default', onClick, icon }: ButtonProps) => {
+export const Button = ({ onClick, children }: ButtonProps) => {
 
     return (
         <div className={style.root} onClick={onClick}>
             <div className={style['wrapper']}>
-                <video playsInline autoPlay muted loop className={style.bg}>
-                    <source src='./button-bg.webm' type='video/webm'/>
-                </video>
-                <div className={style.text}>{children}</div>
+                <div className={style.button}>
+                    <video playsInline autoPlay muted loop className={style.video}>
+                        <source src='./button-bg.webm' type='video/webm'/>
+                    </video>
+                    <svg className={style.svg} width="359" height="56" viewBox="0 0 359 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <clipPath id='mask'>
+                            <rect x="0.5" y="0.5" width="294" height="55" rx="5.5" stroke="white"/>
+                            <path fillRule="evenodd" clipRule="evenodd" d="M319.199 29.5323L319.199 26.7355L338.815 26.7355L329.681 17.6015L331.658 15.6238L342.206 26.1713L342.206 26.1711L342.77 26.7355H342.801V26.766L344.184 28.1488L342.801 29.5315L342.801 29.5323L342.8 29.5323L331.659 40.6738L329.681 38.6961L338.845 29.5323L319.199 29.5323Z" fill="white"/>
+                        </clipPath>
+                    </svg>
+                    <div className={style.text}>{children}</div>
+                </div>
             </div>
         </div>
     );

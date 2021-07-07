@@ -19,5 +19,6 @@ declare namespace JSX {
         mask: any;
         rect: any;
         text: any;
+        clipPath: any;
     }
 }
