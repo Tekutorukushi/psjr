@@ -43,6 +43,15 @@
 	color: #CECECE;
 }
 
+.type {
+	padding: 4px 8px;
+	font-size: 16px;
+	line-height: 1.2;
+	color: #CECECE;
+	background: #313136;
+	border-radius: 4px;
+}
+
 .icon {
 	width: 24px;
 	height: 24px;
@@ -58,8 +67,13 @@
 	font-size: 18px;
 	line-height: 1.5;
 	color: #fff;
+	
+	p {
+		margin: 0;
+	}
 }
 
 .footer {
+	display: flex;
 	margin-top: 32px;
 }

@@ -8,6 +8,7 @@ declare namespace JSX {
         header: any;
         div: any;
         a: any;
+        p: any;
         span: any;
         button: any;
         input: any;
@@ -20,5 +21,6 @@ declare namespace JSX {
         rect: any;
         text: any;
         clipPath: any;
+        aside: any;
     }
 }

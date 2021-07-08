@@ -1,19 +1,39 @@
-.root {
+.button {
 	position: relative;
 	display: flex;
+	
+	&_outline {
+
+		.video {
+			clip-path: url('#mask-play');
+		}
+		
+		.svg > rect {
+			display: block !important;
+			width: 290px;
+			height: 92%;
+			fill: #17171a;
+			mask: url('#mask-text');
+		}
+	}
+	
+	.svg > rect {
+		display: none;
+	}
 }
 
 .wrapper {
 	position: relative;
 	display: flex;
+	align-items: center;
+	width: 344px;
+	height: 56px;
+	padding: 13px 24px;
 	cursor: pointer;
 	user-select: none;
 	
 	&:hover .video {
 		opacity: .8;
-	}
-	
-	&:active .video {
 	}
 }
 
@@ -26,21 +46,23 @@
 	clip-path: url('#mask');
 	object-fit: cover;
 	transition: opacity var(--trs-speed);
-}
-
-.button {
-	position: relative;
-	display: flex;
-	align-items: center;
-	width: 359px;
-	height: 56px;
-	padding: 13px 24px;
+	
+	video {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
 }
 
 .svg {
 	position: absolute;
 	top: 0;
 	left: 0;
+	
+	text {
+		font-size: 24px;
+		font-weight: 700;
+	}
 }
 
 .text {
@@ -48,8 +70,4 @@
 	font-size: 24px;
 	font-weight: 700;
 	color: #fff;
-}
-
-.icon {
-
 }

@@ -7,21 +7,50 @@ import {PencilIcon} from "@app/ui/icons/pencil";
 import {HourglassIcon} from "@app/ui/icons";
 import {Button} from "@app/ui/button";
 import style from './article_preview_card.module.scss'
+import {AudioWave} from "@app/ui/audiowave";
 
 interface ArticlePreviewCard {
     avatarAuthor: string;
     linkAuthor: string;
-    onClickLike: void;
     onClickDownload: void;
     onClickShare: void;
     title: string;
+    type?: string;
     date: string;
     time: number;
-    text: string;
-    linkArticle: string;
+    text?: string;
+    listen?: string;
+    linkArticle?: string;
 }
 
-export const ArticlePreviewCard = ({ avatarAuthor, linkAuthor, onClickLike, onClickDownload, onClickShare, title, date, time, text, linkArticle }: ArticlePreviewCard) => {
+export const ArticlePreviewCard = ({ avatarAuthor, linkAuthor, onClickDownload, onClickShare, title, type, date, time, text, listen, linkArticle }: ArticlePreviewCard) => {
+
+    const renderRead = () => (
+        <>
+            <div className={style.content}>
+                <p>{text}</p>
+            </div>
+            <div className={style.footer}>
+                <Link href={linkArticle}>
+                    <a>
+                        <Button onClick={undefined} arrow>Читать</Button>
+                    </a>
+                </Link>
+            </div>
+        </>
+    )
+
+    const renderListen = () => (
+        <>
+            <div className={style.content}>
+                {listen && <AudioWave />}
+            </div>
+            <div className={style.footer}>
+                <Button type='outline' play>Слушать</Button>
+            </div>
+        </>
+    )
+
     return (
         <div className={style.root}>
             <div className={style.head}>
@@ -32,7 +61,6 @@ export const ArticlePreviewCard = ({ avatarAuthor, linkAuthor, onClickLike, onCl
                     <ArticleButtonBar
                         avatarAuthor={avatarAuthor}
                         linkAuthor={linkAuthor}
-                        onClickLike={onClickLike}
                         onClickDownload={onClickDownload}
                         onClickShare={onClickShare}
                     />
@@ -40,6 +68,11 @@ export const ArticlePreviewCard = ({ avatarAuthor, linkAuthor, onClickLike, onCl
                 <div className={style.container}>
                     <Title type={Type.h1} as='h1' children={undefined}>{title}</Title>
                     <div className={style.info}>
+                        {type &&
+                            <div className={style.row}>
+                              <div className={style.type}>{type}</div>
+                            </div>
+                        }
                         <div className={style.row}>
                             <PencilIcon className={style.icon} />
                             <span>{date}</span>
@@ -49,12 +82,8 @@ export const ArticlePreviewCard = ({ avatarAuthor, linkAuthor, onClickLike, onCl
                             <span>Читать {time} минут</span>
                         </div>
                     </div>
-                    <div className={style.content}>{text}</div>
-                    <div className={style.footer}>
-                        <Link href={linkArticle}>
-                            <Button onClick={undefined} children={undefined}>Читать</Button>
-                        </Link>
-                    </div>
+                    {text && renderRead()}
+                    {listen && renderListen()}
                 </div>
             </div>
         </div>
