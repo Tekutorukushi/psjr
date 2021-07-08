@@ -1,11 +1,11 @@
-import styles from './aside.module.scss'
+import style from './aside.module.scss'
 
-export function Aside() {
+export const Aside = () => {
 
     return (
-        <aside className={styles.aside}>
-            <div className={styles.container}>aside</div>
-            <div className={styles.container}>aside</div>
+        <aside className={style.aside}>
+            <div className={style.container}>aside</div>
+            <div className={style.container}>aside</div>
         </aside>
     );
 }
