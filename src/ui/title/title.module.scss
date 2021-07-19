@@ -3,16 +3,50 @@
 	font-weight: 800;
 	line-height: normal;
 	color: #fff;
+	
+	&_0 {
+		font-size: 48px;
+	}
+	
+	&_1 {
+		font-size: 32px;
+	}
+	
+	&_2 {
+		font-size: 24px;
+	}
 }
 
-.title_0 {
-	font-size: 48px;
+@media (max-width: 1280px) {
+	.title {
+	
+		&_0 {
+			font-size: 32px;
+		}
+		
+		&_1 {
+		
+		}
+		
+		&_2 {
+		
+		}
+	}
 }
 
-.title_1 {
-	font-size: 32px;
-}
-
-.title_2 {
-	font-size: 24px;
+@media (max-width: 767px) {
+	.title {
+		
+		&_0 {
+			font-size: 28px;
+		}
+		
+		&_1 {
+		
+		}
+		
+		&_2 {
+		
+		}
+	}
 }

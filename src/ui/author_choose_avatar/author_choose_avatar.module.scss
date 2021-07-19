@@ -1,0 +1,79 @@
+.author {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	width: 100px;
+	cursor: pointer;
+	
+	&_active {
+		
+		.avatar {
+			&::before, &::after {
+				opacity: 1;
+			}
+		}
+		
+		.name {
+			color: #1A76FF;
+		}
+	}
+	
+	&:hover {
+		
+		.avatar::before {
+			opacity: 1;
+		}
+		
+		.name {
+			color: var(--light-blue);
+		}
+	}
+}
+
+.avatar {
+	position: relative;
+	width: 100px;
+	height: 100px;
+	cursor: pointer;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: contain;
+	border-radius: 50%;
+	
+	&::before {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		content: '';
+		background: url('../../images/circle-gradient.svg') center / contain no-repeat;
+		border-radius: 50%;
+		opacity: 0;
+		transition: opacity var(--trs-speed);
+	}
+	
+	&::after {
+		position: absolute;
+		bottom: 0;
+		left: 50%;
+		width: 32px;
+		height: 32px;
+		transform: translateX(-50%);
+		content: '';
+		background: url('../../images/icons/done-round.svg') center / contain no-repeat;
+		opacity: 0;
+		transition: opacity var(--trs-speed);
+	}
+}
+
+.name {
+	margin-top: 16px;
+	font-size: 18px;
+	font-weight: 600;
+	line-height: 25.2px;
+	color: #fff;
+	text-align: center;
+	transition: color var(--trs-speed);
+}

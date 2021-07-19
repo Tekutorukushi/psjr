@@ -71,9 +71,35 @@
 	p {
 		margin: 0;
 	}
+	
+	img {
+		width: 100%;
+		border-radius: 6px;
+	}
 }
 
 .footer {
 	display: flex;
 	margin-top: 32px;
+}
+
+@media (max-width: 767px) {
+	
+	.body {
+		flex-direction: column-reverse;
+	}
+	
+	.content {
+		font-size: 15px;
+	}
+	
+	.row {
+		font-size: 13px;
+	}
+	
+	.icon {
+		margin-right: 5px;
+		width: 12px;
+		height: 12px;
+	}
 }

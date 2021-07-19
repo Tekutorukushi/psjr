@@ -6,8 +6,8 @@ import {Title, Type} from "@app/ui/title";
 import {PencilIcon} from "@app/ui/icons/pencil";
 import {HourglassIcon} from "@app/ui/icons";
 import {Button} from "@app/ui/button";
-import style from './article_preview_card.module.scss'
 import {AudioWave} from "@app/ui/audiowave";
+import style from './article_preview_card.module.scss'
 
 interface ArticlePreviewCard {
     avatarAuthor: string;
@@ -16,24 +16,24 @@ interface ArticlePreviewCard {
     onClickShare: void;
     title: string;
     type?: string;
-    date: string;
-    time: number;
-    text?: string;
+    date?: string;
+    time?: number;
+    content?: string | object;
     listen?: string;
     linkArticle?: string;
 }
 
-export const ArticlePreviewCard = ({ avatarAuthor, linkAuthor, onClickDownload, onClickShare, title, type, date, time, text, listen, linkArticle }: ArticlePreviewCard) => {
+export const ArticlePreviewCard = ({ avatarAuthor, linkAuthor, onClickDownload, onClickShare, title, type, date, time, content, listen, linkArticle }: ArticlePreviewCard) => {
 
     const renderRead = () => (
         <>
             <div className={style.content}>
-                <p>{text}</p>
+                {content}
             </div>
             <div className={style.footer}>
                 <Link href={linkArticle}>
                     <a>
-                        <Button onClick={undefined} arrow>Читать</Button>
+                        <Button arrow>Читать</Button>
                     </a>
                 </Link>
             </div>
@@ -66,7 +66,7 @@ export const ArticlePreviewCard = ({ avatarAuthor, linkAuthor, onClickDownload, 
                     />
                 </div>
                 <div className={style.container}>
-                    <Title type={Type.h1} as='h1' children={undefined}>{title}</Title>
+                    <Title type={Type.h1} as='h1'>{title}</Title>
                     <div className={style.info}>
                         {type &&
                             <div className={style.row}>
@@ -77,12 +77,12 @@ export const ArticlePreviewCard = ({ avatarAuthor, linkAuthor, onClickDownload, 
                             <PencilIcon className={style.icon} />
                             <span>{date}</span>
                         </div>
-                        <div className={style.row}>
+                        {time && <div className={style.row}>
                             <HourglassIcon className={style.icon} />
                             <span>Читать {time} минут</span>
-                        </div>
+                        </div>}
                     </div>
-                    {text && renderRead()}
+                    {content && renderRead()}
                     {listen && renderListen()}
                 </div>
             </div>

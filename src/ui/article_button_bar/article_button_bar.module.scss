@@ -39,3 +39,11 @@
 .icon_active svg {
 	fill: var(--light-blue);
 }
+
+@media (max-width: 767px) {
+	
+	.root {
+		margin-top: 24px;
+		flex-direction: row;
+	}
+}

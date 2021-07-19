@@ -14,8 +14,8 @@ export enum Type {
 
 interface TitleProps {
     as?: keyof ReactHTML;
-    children: React.ReactNode;
-    type: Type;
+    children?: React.ReactNode;
+    type?: Type;
 }
 
 export const Title = ({ as = 'span', children, type }: TitleProps) => {

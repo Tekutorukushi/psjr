@@ -1,7 +1,6 @@
 // @ts-ignore
 import Link from 'next/link'
 import classes from './header.module.scss'
-import { Input } from "../input";
 
 export function Header() {
     return (
@@ -9,7 +8,10 @@ export function Header() {
             <Link href='/'>
                 <a className={classes.logo} />
             </Link>
-            <Input placeholder='Поиск' />
+            <div className={classes.input}>
+                <button />
+                <input placeholder='Поиск' />
+            </div>
             <div className={classes.login}>
                 <span>Вход</span>
                 <span className={classes.icon} /></div>
