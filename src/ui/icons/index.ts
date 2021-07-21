@@ -1,0 +1,5 @@
+export { LikeIcon } from './like'
+export { ShareIcon } from './share'
+export { DownloadIcon } from './download'
+export { PencilIcon } from './pencil'
+export { HourglassIcon } from './hourglass'

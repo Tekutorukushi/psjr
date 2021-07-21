@@ -2,12 +2,25 @@
 	display: block;
 	width: 32px;
 	height: 32px;
+	cursor: pointer;
 }
 
-.fill path {
+.fill {
 	fill: #fff;
+	transition: fill var(--trs-speed);
 	
-	&:hover {
+	.iconButton:hover > &,
+	.iconButton:focus > & {
 		fill: var(--blue);
+	}
+	.iconButton:active > & {
+		fill: var(--light-blue);
+	}
+	&:hover,
+	&:focus {
+		fill: var(--blue);
+	}
+	&:active {
+		fill: var(--light-blue);
 	}
 }
