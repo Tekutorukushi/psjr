@@ -2,17 +2,19 @@
 import React, { useState } from 'react';
 // @ts-ignore
 import Link from 'next/link'
+
 import {DownloadIcon, LikeIcon, ShareIcon} from "@app/ui/icons";
+
 import style from "./article_button_bar.module.scss";
 
-interface ArticleButtonBar {
-    avatarAuthor: string
-    linkAuthor: string
-    onClickShare: void
-    onClickDownload: void
+interface ArticleButtonBarProps {
+    avatarAuthor?: string
+    linkAuthor?: string
+    onClickShare?: void
+    onClickDownload?: void
 }
 
-export const ArticleButtonBar = ({ avatarAuthor, linkAuthor, onClickShare, onClickDownload }: ArticleButtonBar) => {
+export const ArticleButtonBar = ({ avatarAuthor, linkAuthor, onClickShare, onClickDownload }: ArticleButtonBarProps) => {
     const [like, isLike] = useState(false);
 
     const toggle = () => {
@@ -24,7 +26,7 @@ export const ArticleButtonBar = ({ avatarAuthor, linkAuthor, onClickShare, onCli
             <Link href={linkAuthor}>
                 <a className={style.avatar} style={{ backgroundImage: `url(${avatarAuthor})` }} />
             </Link>
-            <LikeIcon onClick={toggle} className={like ? style[`icon_active`] : ''} />
+            <LikeIcon onClick={toggle} className={like ? style.icon_active : ''} />
             <ShareIcon onClick={onClickShare} />
             <DownloadIcon onClick={onClickDownload} />
         </div>

@@ -18,9 +18,9 @@ export const AuthorPreviewCard = () => {
                     <AuthorChooseAvatar avatar={'/mock/author.jpg'} name='Esther Howards' />
                     <AuthorChooseAvatar avatar={'/mock/author.jpg'} name='Brooklyn Simmons' />
                 </div>
-                <Link href='/'>
+                <Link href='/pages/preferences'>
                     <a>
-                        <Button type='author' onClick={undefined} author />
+                        <Button type='author' author />
                     </a>
                 </Link>
             </div>

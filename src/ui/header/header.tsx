@@ -1,20 +1,21 @@
 // @ts-ignore
 import Link from 'next/link'
-import classes from './header.module.scss'
+
+import style from './header.module.scss'
 
 export function Header() {
     return (
-        <header className={classes.header}>
+        <header className={style.header}>
             <Link href='/'>
-                <a className={classes.logo} />
+                <a className={style.logo} />
             </Link>
-            <div className={classes.input}>
+            <div className={style.input}>
                 <button />
                 <input placeholder='Поиск' />
             </div>
-            <div className={classes.login}>
+            <div className={style.login}>
                 <span>Вход</span>
-                <span className={classes.icon} /></div>
+                <span className={style.icon} /></div>
         </header>
     );
 }

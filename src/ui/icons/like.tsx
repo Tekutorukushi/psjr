@@ -2,12 +2,11 @@
 import clsx from 'clsx';
 
 import style from './icon.module.scss'
-
 import { IconProps } from './icon_props'
 
 export const LikeIcon = ({ onClick, className }: IconProps) =>{
     return (
-        <div className={clsx(style[`icon`], className)} onClick={onClick} >
+        <div className={clsx(style.icon, className)} onClick={onClick} >
             <svg
                 className={style.fill}
                 viewBox="0 0 32 32"
