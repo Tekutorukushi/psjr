@@ -1,5 +1,6 @@
 import {ArticlePreviewCard} from "@app/ui/article_preview_card";
 import {AuthorPreviewCard} from "@app/ui/author_preview_card/author_preview_card";
+
 import classes from './feed.module.scss'
 
 export const FeedPage = () => {

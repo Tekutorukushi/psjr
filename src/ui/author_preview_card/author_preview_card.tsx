@@ -2,25 +2,29 @@
 import Link from 'next/link'
 
 import {Title, Type} from "@app/ui/title";
-import {Button} from "@app/ui/button";
 import {AuthorChooseAvatar} from "@app/ui/author_choose_avatar";
+import { ButtonAnimation } from '@app/ui/button_animation';
+
 import style from './author_preview_card.module.scss'
 
 export const AuthorPreviewCard = () => {
+    const authors = [{avatar: '/mock/author.jpg', name: 'Floyd Miles'},
+        {avatar: '/mock/author.jpg', name: 'Ronald Richards'},
+        {avatar: '/mock/author.jpg', name: 'Brooklyn Simmons'},
+        {avatar: '/mock/author.jpg', name: 'Esther Howards'},
+        {avatar: '/mock/author.jpg', name: 'Brooklyn Simmons'}]
     return (
         <div className={style.root}>
             <div className={style.container}>
                 <Title type={Type.h1} as='h1'>Выбери любимых авторов</Title>
                 <div className={style.content}>
-                    <AuthorChooseAvatar avatar={'/mock/author.jpg'} name='Floyd Miles' />
-                    <AuthorChooseAvatar avatar={'/mock/author.jpg'} name='Ronald Richards' />
-                    <AuthorChooseAvatar avatar={'/mock/author.jpg'} name='Brooklyn Simmons' />
-                    <AuthorChooseAvatar avatar={'/mock/author.jpg'} name='Esther Howards' />
-                    <AuthorChooseAvatar avatar={'/mock/author.jpg'} name='Brooklyn Simmons' />
+                    {authors.map((item, i) => (
+                      <AuthorChooseAvatar key={i} {...item} />
+                    ))}
                 </div>
-                <Link href='/pages/preferences'>
+                <Link href='/preferences'>
                     <a>
-                        <Button type='author' author />
+                        <ButtonAnimation type='author' author />
                     </a>
                 </Link>
             </div>

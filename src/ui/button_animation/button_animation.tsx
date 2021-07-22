@@ -5,7 +5,7 @@ import clsx from 'clsx';
 
 import style from './button_animation.module.scss';
 
-interface ButtonProps {
+interface ButtonAnimationProps {
     onClick?: void;
     type?: 'default' | 'play' | 'author' | 'country';
     children?: React.ReactNode;
@@ -15,7 +15,7 @@ interface ButtonProps {
     country?: boolean;
 }
 
-export const ButtonAnimation = ({ onClick, type='default', children, arrow, play, author, country }: ButtonProps) => {
+export const ButtonAnimation = ({ onClick, type='default', children, arrow, play, author, country }: ButtonAnimationProps) => {
     const renderArrow = () => (
         <svg className={style.svg} width="359" height="56" viewBox="0 0 359 56" xmlns="http://www.w3.org/2000/svg">
             <clipPath id='mask'>

@@ -1,0 +1,45 @@
+.tag {
+	display: flex;
+	align-items: center;
+	padding: 10px 16px 10px 8px;
+	cursor: pointer;
+	background: #252528;
+	border-radius: 6px;
+	transition: background var(--trs-speed);
+	user-select: none;
+	
+	&:hover {
+		background: #202029;
+		
+		.name {
+			color: var(--blue);
+		}
+	}
+	
+	&:active {
+		background: #0F0F12;
+		
+		.name {
+			color: var(--light-blue);
+		}
+	}
+}
+
+
+.icon {
+	flex-shrink: 0;
+	width: 24px;
+	height: 24px;
+	margin-right: 10px;
+	background-repeat: no-repeat;
+	background-size: contain;
+	border-radius: 50%;
+}
+
+.name {
+	font-size: 14px;
+	font-weight: 600;
+	line-height: 20px;
+	color: #fff;
+	transition: color var(--trs-speed);
+}

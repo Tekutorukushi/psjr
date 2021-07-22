@@ -1,0 +1,55 @@
+.button {
+	display: flex;
+	align-items: center;
+	padding: 10px 0;
+	cursor: pointer;
+	user-select: none;
+	
+	span {
+		font-size: 18px;
+		font-weight: 700;
+		line-height: 21.6px;
+		color: #fff;
+		transition: color var(--trs-speed);
+	}
+	
+	&:hover {
+		
+		span {
+			color: var(--blue);
+		}
+		
+		.before svg rect {
+			fill: var(--blue);
+		}
+	}
+	
+	&:active {
+		
+		span {
+			color: var(--light-blue);
+		}
+		
+		.before svg rect {
+			fill: var(--light-blue);
+		}
+	}
+}
+
+.before {
+	display: flex;
+	margin-right: 22px;
+	
+	& > div {
+		width: 19px;
+		height: 19px;
+	}
+	
+	svg rect {
+		transition: all var(--trs-speed);
+	}
+}
+
+.after {
+
+}

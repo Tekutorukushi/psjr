@@ -6,6 +6,22 @@
 	width: 100px;
 	cursor: pointer;
 	
+	&_small {
+		width: min-content;
+		
+		.avatar {
+			width: 56px;
+			height: 56px;
+		}
+		
+		.name {
+			margin-top: 12px;
+			font-size: 12px;
+			font-weight: 600;
+			line-height: 17px;
+		}
+	}
+	
 	&_active {
 		
 		.avatar {
@@ -60,9 +76,9 @@
 		left: 50%;
 		width: 32px;
 		height: 32px;
-		transform: translateX(-50%);
 		content: '';
 		background: url('../../images/icons/done-round.svg') center / contain no-repeat;
+		transform: translateX(-50%);
 		opacity: 0;
 		transition: opacity var(--trs-speed);
 	}

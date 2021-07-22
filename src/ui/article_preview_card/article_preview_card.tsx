@@ -3,10 +3,10 @@ import Link from 'next/link'
 
 import {ArticleButtonBar} from "@app/ui/article_button_bar";
 import {Title, Type} from "@app/ui/title";
-import {PencilIcon} from "@app/ui/icons/pencil";
+import {IconPencil} from "@app/ui/icons/pencil";
 import {HourglassIcon} from "@app/ui/icons";
-import {AudioWave} from "@app/ui/audiowave";
 import {ButtonAnimation} from "@app/ui/button_animation";
+import {AudioWave} from "@app/ui/audiowave";
 
 import style from './article_preview_card.module.scss'
 
@@ -75,7 +75,7 @@ export const ArticlePreviewCard = ({ avatarAuthor, linkAuthor, onClickDownload, 
                         </div>
                         }
                         <div className={style.row}>
-                            <PencilIcon className={style.icon} />
+                            <IconPencil className={style.icon} />
                             <span>{date}</span>
                         </div>
                         <div className={style.row}>
