@@ -1,7 +1,7 @@
 import { Button } from '@app/ui/button';
 import { IconArrowLeft } from '@app/ui/icons/arrow_left';
 import { AuthorChooseAvatar } from '@app/ui/author_choose_avatar';
-import { ButtonAnimation } from '@app/ui/button_animation';
+import { ButtonAnimationAuthor, ButtonAnimationCountry } from '@app/ui/button_animation';
 import { CountryCard } from '@app/ui/country_card/country_card';
 import { TagCard } from '@app/ui/tag_card';
 import { IconPencil, IconPhoto, IconPlay, IconSpeaker } from '@app/ui/icons';
@@ -48,7 +48,7 @@ export const PagePreferences = () => {
                             <AuthorChooseAvatar small='small' key={i} {...item} />
                         ))}
                     </div>
-                    <ButtonAnimation type='author' author />
+                    <ButtonAnimationAuthor />
                 </div>
                 <div className={style.content}>
                     <div className={style.countries}>
@@ -56,7 +56,7 @@ export const PagePreferences = () => {
                             <CountryCard small='small' key={i} {...item} />
                         ))}
                     </div>
-                    <ButtonAnimation type='country' country />
+                    <ButtonAnimationCountry />
                 </div>
                 <div className={style.content}>
                     <div className={style.tags}>

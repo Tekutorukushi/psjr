@@ -3,7 +3,7 @@ import Link from 'next/link'
 
 import {Title, Type} from "@app/ui/title";
 import {AuthorChooseAvatar} from "@app/ui/author_choose_avatar";
-import { ButtonAnimation } from '@app/ui/button_animation';
+import { ButtonAnimationAuthor } from '@app/ui/button_animation';
 
 import style from './author_preview_card.module.scss'
 
@@ -24,7 +24,7 @@ export const AuthorPreviewCard = () => {
                 </div>
                 <Link href='/preferences'>
                     <a>
-                        <ButtonAnimation type='author' author />
+                        <ButtonAnimationAuthor />
                     </a>
                 </Link>
             </div>

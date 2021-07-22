@@ -1,6 +1,21 @@
 .button {
 	position: relative;
 	display: flex;
+	overflow: hidden;
+	border-radius: 6px;
+	
+	&_text {
+		.wrapper {
+			width: auto;
+			height: 64px;
+		}
+		.svg {
+			bottom: 0;
+		}
+		.text {
+			font-size: 18px;
+		}
+	}
 	
 	&_play {
 		
@@ -54,6 +69,7 @@
 	align-items: center;
 	width: 344px;
 	height: 56px;
+	padding-right: 24px;
 	padding-left: 24px;
 	cursor: pointer;
 	user-select: none;
@@ -69,7 +85,6 @@
 	left: 0;
 	width: 100%;
 	height: 100%;
-	clip-path: url('#mask');
 	object-fit: cover;
 	transition: opacity var(--trs-speed);
 	

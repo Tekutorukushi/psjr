@@ -5,7 +5,7 @@ import {ArticleButtonBar} from "@app/ui/article_button_bar";
 import {Title, Type} from "@app/ui/title";
 import {IconPencil} from "@app/ui/icons/pencil";
 import {HourglassIcon} from "@app/ui/icons";
-import {ButtonAnimation} from "@app/ui/button_animation";
+import { ButtonAnimationArrow, ButtonAnimationPlay } from '@app/ui/button_animation';
 import {AudioWave} from "@app/ui/audiowave";
 
 import style from './article_preview_card.module.scss'
@@ -34,7 +34,7 @@ export const ArticlePreviewCard = ({ avatarAuthor, linkAuthor, onClickDownload, 
             <div className={style.footer}>
                 <Link href={linkArticle}>
                     <a>
-                        <ButtonAnimation arrow>Читать</ButtonAnimation>
+                        <ButtonAnimationArrow>Читать</ButtonAnimationArrow>
                     </a>
                 </Link>
             </div>
@@ -47,7 +47,7 @@ export const ArticlePreviewCard = ({ avatarAuthor, linkAuthor, onClickDownload, 
                 {listen && <AudioWave />}
             </div>
             <div className={style.footer}>
-                <ButtonAnimation type='play' play />
+                <ButtonAnimationPlay>Слушать</ButtonAnimationPlay>
             </div>
         </>
     )
