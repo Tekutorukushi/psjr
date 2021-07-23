@@ -2,3 +2,31 @@
 	display: flex;
 	gap: 24px;
 }
+
+.item {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 72px;
+	height: 72px;
+	cursor: pointer;
+	background: #2E2E31;
+	border-radius: 6px;
+	transition: background var(--trs-speed);
+	
+	&:hover {
+		background: #202029;
+		
+		.icon path {
+			fill: var(--blue)
+		}
+	}
+	
+	&:active {
+		background: #0F0F12;
+		
+		.icon path {
+			fill: var(--light-blue)
+		}
+	}
+}

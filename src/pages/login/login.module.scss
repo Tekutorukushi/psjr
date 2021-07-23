@@ -1,4 +1,7 @@
 .login {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 	width: 100%;
 	max-width: 578px;
 	margin-top: 54px;
@@ -26,6 +29,7 @@
 .enter {
 	display: flex;
 	gap: 8px;
+	width: 100%;
 }
 
 .or {

@@ -24,3 +24,10 @@
 		fill: var(--light-blue);
 	}
 }
+
+.social {
+	
+	path {
+		transition: fill var(--trs-speed);
+	}
+}

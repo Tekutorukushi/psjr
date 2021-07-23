@@ -23,5 +23,6 @@ declare namespace JSX {
         clipPath: any;
         aside: any;
         img: any;
+        g: any;
     }
 }
