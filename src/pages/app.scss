@@ -40,3 +40,66 @@ a {
 		margin-top: 0;
 	}
 }
+
+.swiper-container {
+	width: 100%;
+	overflow: initial!important;
+	max-width: 560px;
+}
+
+.swiper-slide {
+	width: auto!important;
+}
+
+.swiper-navigation {
+	display: flex;
+	align-items: center;
+	gap: 32px;
+}
+
+.swiper-arrows {
+	display: flex;
+	user-select: none;
+}
+
+.swiper-arrow {
+	display: flex!important;
+	align-items: center;
+	width: 42px!important;
+	height: 42px!important;
+	cursor: pointer;
+	
+	&_next {
+		justify-content: flex-end;
+	}
+	
+	&.swiper-button-disabled {
+		pointer-events: none;
+		opacity: .2;
+	}
+	
+	svg {
+		width: 14px;
+		height: 14px;
+	}
+}
+
+.swiper-button-prev, .swiper-button-next {
+	all: unset!important;
+	
+	&:after {
+		display: none;
+	}
+}
+
+.swiper-scrollbar {
+	width: 100%;
+	height: 8px;
+	background: #232327 !important;
+	border-radius: 2px!important;
+	
+	&-drag {
+		background: #3C3C43!important;
+		border-radius: 2px!important;
+	}
+}

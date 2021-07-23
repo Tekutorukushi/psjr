@@ -69,7 +69,9 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["sass", "npm:1.32.12"],
             ["simple-git-hooks", "npm:2.4.1"],
             ["stylelint", "npm:13.13.1"],
-            ["typescript", "patch:typescript@npm%3A4.2.4#builtin<compat/typescript>::version=4.2.4&hash=a45b0e"]
+            ["swiper", "npm:6.8.0"],
+            ["typescript", "patch:typescript@npm%3A4.2.4#builtin<compat/typescript>::version=4.2.4&hash=a45b0e"],
+            ["wavesurfer.js", "npm:5.1.0"]
           ],
           "linkType": "SOFT",
         }]
@@ -2774,6 +2776,16 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["dom-serializer", "npm:0.2.2"],
             ["domelementtype", "npm:2.2.0"],
             ["entities", "npm:2.2.0"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["dom7", [
+        ["npm:3.0.0", {
+          "packageLocation": "./.yarn/cache/dom7-npm-3.0.0-28768f2034-8beff48475.zip/node_modules/dom7/",
+          "packageDependencies": [
+            ["dom7", "npm:3.0.0"],
+            ["ssr-window", "npm:3.0.0"]
           ],
           "linkType": "HARD",
         }]
@@ -6580,7 +6592,9 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["sass", "npm:1.32.12"],
             ["simple-git-hooks", "npm:2.4.1"],
             ["stylelint", "npm:13.13.1"],
-            ["typescript", "patch:typescript@npm%3A4.2.4#builtin<compat/typescript>::version=4.2.4&hash=a45b0e"]
+            ["swiper", "npm:6.8.0"],
+            ["typescript", "patch:typescript@npm%3A4.2.4#builtin<compat/typescript>::version=4.2.4&hash=a45b0e"],
+            ["wavesurfer.js", "npm:5.1.0"]
           ],
           "linkType": "SOFT",
         }]
@@ -7430,6 +7444,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD",
         }]
       ]],
+      ["ssr-window", [
+        ["npm:3.0.0", {
+          "packageLocation": "./.yarn/cache/ssr-window-npm-3.0.0-8a2d34cc37-36ac4b6ba9.zip/node_modules/ssr-window/",
+          "packageDependencies": [
+            ["ssr-window", "npm:3.0.0"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
       ["ssri", [
         ["npm:8.0.1", {
           "packageLocation": "./.yarn/cache/ssri-npm-8.0.1-a369e72ce2-d45f9a1d56.zip/node_modules/ssri/",
@@ -7971,6 +7994,17 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/svg-tags-npm-1.0.0-68a35c11fa-8f19e7b2b5.zip/node_modules/svg-tags/",
           "packageDependencies": [
             ["svg-tags", "npm:1.0.0"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["swiper", [
+        ["npm:6.8.0", {
+          "packageLocation": "./.yarn/unplugged/swiper-npm-6.8.0-1376118aa4/node_modules/swiper/",
+          "packageDependencies": [
+            ["swiper", "npm:6.8.0"],
+            ["dom7", "npm:3.0.0"],
+            ["ssr-window", "npm:3.0.0"]
           ],
           "linkType": "HARD",
         }]
@@ -8524,6 +8558,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["watchpack", "npm:2.1.1"],
             ["glob-to-regexp", "npm:0.4.1"],
             ["graceful-fs", "npm:4.2.6"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["wavesurfer.js", [
+        ["npm:5.1.0", {
+          "packageLocation": "./.yarn/cache/wavesurfer.js-npm-5.1.0-0e5e337dd5-2bef9c5139.zip/node_modules/wavesurfer.js/",
+          "packageDependencies": [
+            ["wavesurfer.js", "npm:5.1.0"]
           ],
           "linkType": "HARD",
         }]

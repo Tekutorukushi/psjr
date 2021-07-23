@@ -5,13 +5,11 @@ import style from './icon.module.scss'
 import { IconProps } from './icon_props'
 
 export const IconArrowLeft = ({ onClick, className }: IconProps) =>{
-  return (
-    <div className={clsx(style.icon, className)} onClick={onClick} >
-      <svg viewBox="0 0 19 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <rect width="2.66129" height="16.899" transform="matrix(0.555779 0.557 -0.553332 0.558704 9.40967 0.496948)" fill="white"/>
-        <rect width="3.36162" height="13.8845" transform="matrix(0.000556167 0.61997 -1.27107 0.0035906 18.7388 8.86304)" fill="white"/>
-        <rect width="2.67247" height="16.8814" transform="matrix(-0.553099 0.558759 -0.555546 -0.557056 10.9155 17.849)" fill="white"/>
-      </svg>
-    </div>
-  )
+    return (
+        <div className={clsx(style.icon, className)} onClick={onClick} >
+            <svg viewBox="0 0 19 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fillRule="evenodd" clipRule="evenodd" d="M18.6902 8.86305L18.6938 10.9671L4.02774 10.992L10.8685 17.852L9.39243 19.3423L1.49302 11.4207L1.49287 11.4208L1.07023 10.997L1.04735 10.997L1.04731 10.974L0.0117506 9.93551L1.0438 8.89354L1.0438 8.89293L1.0444 8.89293L9.36044 0.496942L10.8416 1.98223L4.00163 8.88792L18.6902 8.86305Z" fill="white"/>
+            </svg>
+        </div>
+    )
 }

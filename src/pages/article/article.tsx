@@ -2,10 +2,10 @@ import { IconArrowLeft } from '@app/ui/icons/arrow_left';
 import { Button } from '@app/ui/button';
 import { ArticleInformers } from '@app/ui/acticle_informers';
 import { ArticleButtonBar } from '@app/ui/article_button_bar';
-
-import style from './article.module.scss'
 import { OtherArticle } from '@app/ui/other_article';
 import { Title, Type } from '@app/ui/title';
+
+import style from './article.module.scss'
 
 export const PageArticle = () => {
 	const links = [
