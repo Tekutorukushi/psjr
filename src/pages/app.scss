@@ -3,6 +3,9 @@
 :root {
 	--blue: #0178FF;
 	--light-blue: #71BBFF;
+	--bg: #252528;
+	--bg-hover: #202029;
+	--bg-active: #0F0F12;
 	--trs-speed: .2s ease-in-out;
 }
 
@@ -29,6 +32,7 @@ a {
 	padding-right: 30px;
 	padding-left: 30px;
 	padding-bottom: 100px;
+	overflow: hidden;
 	
 	@media (max-width: 767px) {
 		padding-right: 20px;

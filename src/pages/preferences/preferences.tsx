@@ -45,7 +45,7 @@ export const PagePreferences = () => {
                 <div className={style.content}>
                     <div className={style.authors}>
                         {authors.map((item, i) => (
-                            <AuthorChooseAvatar small='small' key={i} {...item} />
+                            <AuthorChooseAvatar small key={i} {...item} />
                         ))}
                     </div>
                     <ButtonAnimationAuthor />

@@ -19,7 +19,7 @@ export const AuthorChooseAvatar = ({ small, avatar, name }: AuthorChooseAvatarPr
     };
 
     return (
-        <div className={clsx(style.author, small ? style.author_small : '', choose ? style.author_active : '')} onClick={toggle}>
+        <div className={clsx(style.author, small ? style.author_small : choose ? style.author_active : '')} onClick={toggle}>
             <div className={style.avatar} style={{ backgroundImage: `url(${avatar})` }} />
             <div className={style.name}>{name}</div>
         </div>

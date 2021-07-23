@@ -1,0 +1,80 @@
+.root {
+	display: flex;
+	flex-direction: column;
+}
+
+.container {
+	margin-top: 24px;
+	display: flex;
+	gap: 16px;
+}
+
+.article {
+	width: 200px;
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	gap: 16px;
+	padding: 16px;
+	background: var(--bg);
+	border-radius: 6px;
+	transition: background var(--trs-speed);
+	
+	&:hover {
+		background: var(--bg-hover);
+		
+		.title {
+			color: var(--blue);
+		}
+	}
+	
+	&:active {
+		background: var(--bg-active);
+		
+		.title {
+			color: var(--light-blue);
+		}
+	}
+}
+
+.arrow {
+	position: absolute;
+	top: 16px;
+	right: 16px;
+}
+
+.avatar {
+	position: relative;
+	width: 48px;
+	height: 48px;
+	cursor: pointer;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: contain;
+	border-radius: 50%;
+	
+	&::before {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		content: '';
+		background: url('../../images/circle-gradient.svg') center / contain no-repeat;
+		border-radius: 50%;
+		transition: box-shadow var(--trs-speed);
+	}
+}
+
+.title {
+	font-size: 14px;
+	font-weight: 800;
+	line-height: 16.8px;
+	color: #fff;
+	transition: color var(--trs-speed);
+}
+
+.time {
+	font-size: 13px;
+	color: #CECECE;
+}

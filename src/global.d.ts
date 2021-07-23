@@ -24,5 +24,10 @@ declare namespace JSX {
         aside: any;
         img: any;
         g: any;
+        h1: any;
+        br: any;
+        ul: any;
+        li: any;
+        ol: any;
     }
 }

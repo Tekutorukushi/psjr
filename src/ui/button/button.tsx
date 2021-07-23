@@ -5,7 +5,6 @@ import style from './button.module.scss';
 
 interface ButtonProps {
   onClick?: void;
-  type?: 'default' | 'play' | 'author' | 'country';
   children?: React.ReactNode;
   before?: React.ReactNode;
   after?: React.ReactNode;
