@@ -4,6 +4,6 @@ import { PageLogin } from '@app/pages/login';
 import { PageArticle } from '@app/pages/article';
 
 export default function Home() {
-  return (<PageArticle />)
+  return (<FeedPage />)
 }
 

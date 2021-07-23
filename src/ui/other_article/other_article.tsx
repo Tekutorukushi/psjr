@@ -16,20 +16,13 @@ import SwiperCore, { Scrollbar, Navigation } from 'swiper/core';
 // install Swiper modules
 SwiperCore.use([Scrollbar, Navigation]);
 
-export const OtherArticle = () => {
+interface OtherArticleProps {
+	article?: array;
+}
+
+export const OtherArticle = ({ article }: OtherArticleProps) => {
 	const swiperRef = useRef(null);
 
-	const article = [
-		{link: '#/', avatar: '/mock/author.jpg', title: 'Таиланд открылся для туристов', time: '5 минут'},
-		{link: '#/', avatar: '/mock/author.jpg', title: 'Уганда: дикие животные, ведьмы и море самогона | Настоящая Африка', time: '5 минут'},
-		{link: '#/', avatar: '/mock/author.jpg', title: 'Уганда: дикие животные, ведьмы и море самогона | Настоящая Африка', time: '5 минут'},
-		{link: '#/', avatar: '/mock/author.jpg', title: 'Уганда: дикие животные, ведьмы и море самогона | Настоящая Африка', time: '5 минут'},
-		{link: '#/', avatar: '/mock/author.jpg', title: 'Таиланд открылся для туристов', time: '5 минут'},
-		{link: '#/', avatar: '/mock/author.jpg', title: 'Таиланд открылся для туристов', time: '5 минут'},
-		{link: '#/', avatar: '/mock/author.jpg', title: 'Таиланд открылся для туристов', time: '5 минут'},
-		{link: '#/', avatar: '/mock/author.jpg', title: 'Таиланд открылся для туристов', time: '5 минут'},
-		{link: '#/', avatar: '/mock/author.jpg', title: 'Уганда: дикие животные, ведьмы и море самогона | Настоящая Африка', time: '5 минут'},
-	]
 	return (
 		<div className={style.root}>
 			<Title type={Type.h2} as='h2'>Тоже крутые статьи</Title>

@@ -17,6 +17,21 @@
 		}
 	}
 	
+	&_pause {
+		
+		.video {
+			clip-path: url('#mask-pause');
+		}
+		
+		.svg > rect {
+			display: block !important;
+			width: 290px;
+			height: 92%;
+			fill: #17171a;
+			mask: url('#mask-text');
+		}
+	}
+	
 	&_play {
 		
 		.video {

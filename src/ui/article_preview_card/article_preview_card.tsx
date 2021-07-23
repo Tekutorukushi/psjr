@@ -43,10 +43,7 @@ export const ArticlePreviewCard = ({ avatarAuthor, linkAuthor, onClickDownload, 
     const renderListen = () => (
         <>
             <div className={style.content}>
-                {listen && <AudioWave />}
-            </div>
-            <div className={style.footer}>
-                <ButtonAnimationPlay>Слушать</ButtonAnimationPlay>
+                {listen && <AudioWave url={listen} />}
             </div>
         </>
     )

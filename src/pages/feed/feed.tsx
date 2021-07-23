@@ -26,7 +26,7 @@ export const FeedPage = () => {
                 type='Подкаст'
                 date='Вчера'
                 time='5 минут'
-                listen={true}
+                listen='https://www.mfiles.co.uk/mp3-downloads/brahms-st-anthony-chorale-theme-two-pianos.mp3'
             />
             <AuthorPreviewCard />
             <ArticlePreviewCard
