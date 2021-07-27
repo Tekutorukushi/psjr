@@ -7,7 +7,7 @@ const formWaveSurferOptions = (ref) => ({
   container: ref,
   waveColor: "#eee",
   progressColor: "#0178FF",
-  cursorColor: "OrangeRed",
+  cursorColor: "transparent",
   barWidth: 3,
   barRadius: 3,
   responsive: true,
@@ -54,8 +54,8 @@ export const AudioWave = ({ url }: AudioWaveProps) => {
         <div id="waveform" ref={waveformRef} />
         <div className={style.button}>
           {!playing ?
-              <ButtonAnimationPlay onClick={handlePlayPause}>Слушать</ButtonAnimationPlay> :
-              <ButtonAnimationPause onClick={handlePlayPause}>Пауза</ButtonAnimationPause>
+              <ButtonAnimationPause onClick={handlePlayPause}>Слушать</ButtonAnimationPause> :
+              <ButtonAnimationPlay onClick={handlePlayPause}>Пауза</ButtonAnimationPlay>
           }
         </div>
       </div>

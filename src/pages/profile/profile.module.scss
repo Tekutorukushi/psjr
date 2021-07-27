@@ -1,0 +1,32 @@
+.root {
+	display: flex;
+	flex-direction: column;
+	gap: 64px;
+	width: 100%;
+	max-width: 648px;
+	margin-top: 58px;
+}
+
+.content {
+	display: flex;
+	flex-direction: column;
+	gap: 48px;
+	
+	&_button {
+		display: flex;
+		
+		.button {
+			padding: 21px 32px;
+			
+			&.is_active {
+				background: #252528;
+			}
+		}
+	}
+	
+	&_articles {
+		display: flex;
+		flex-direction: column;
+		gap: 64px;
+	}
+}

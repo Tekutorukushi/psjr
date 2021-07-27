@@ -1,15 +1,15 @@
-// @ts-ignore
 import Link from 'next/link'
-
+import clsx from 'clsx';
 import {ArticleButtonBar} from "@app/ui/article_button_bar";
 import {Title, Type} from "@app/ui/title";
-import { ButtonAnimationArrow, ButtonAnimationPlay } from '@app/ui/button_animation';
+import { ButtonAnimationArrow } from '@app/ui/button_animation';
 import {AudioWave} from "@app/ui/audiowave";
 import { ArticleInformers } from '@app/ui/acticle_informers';
 
 import style from './article_preview_card.module.scss'
 
 interface ArticlePreviewCardProps {
+    secondary?: boolean;
     avatarAuthor?: string;
     linkAuthor?: string;
     onClickDownload?: void;
@@ -23,18 +23,16 @@ interface ArticlePreviewCardProps {
     linkArticle?: string;
 }
 
-export const ArticlePreviewCard = ({ avatarAuthor, linkAuthor, onClickDownload, onClickShare, title, type, date, time, content, listen, linkArticle }: ArticlePreviewCardProps) => {
+export const ArticlePreviewCard = ({ secondary, avatarAuthor, linkAuthor, onClickDownload, onClickShare, title, type, date, time, content, listen, linkArticle }: ArticlePreviewCardProps) => {
 
     const renderRead = () => (
         <>
-            <div className={style.content}>
+            <div className={secondary ? clsx(style.content, style.content_secondary) : style.content}>
                 {content}
             </div>
             <div className={style.footer}>
                 <Link href={linkArticle}>
-                    <a>
-                        <ButtonAnimationArrow>Читать</ButtonAnimationArrow>
-                    </a>
+                    <a><ButtonAnimationArrow>Читать</ButtonAnimationArrow></a>
                 </Link>
             </div>
         </>
@@ -63,7 +61,7 @@ export const ArticlePreviewCard = ({ avatarAuthor, linkAuthor, onClickDownload, 
                     />
                 </div>
                 <div className={style.container}>
-                    <Title type={Type.h1} as='h1'>{title}</Title>
+                    {secondary ? <Title type={Type.h2} as='h2'>{title}</Title> : <Title type={Type.h1} as='h1'>{title}</Title>}
                     <ArticleInformers type={type} date={date} time={time} />
                     {content && renderRead()}
                     {listen && renderListen()}

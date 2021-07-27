@@ -1,0 +1,33 @@
+.root {
+	display: flex;
+}
+
+.avatar {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100px;
+	height: 100px;
+	margin-right: 32px;
+	font-size: 50px;
+	font-weight: 900;
+	line-height: 2;
+	color: #fff;
+	user-select: none;
+	background: url('../../images/bg-avatar.jpg') center / cover no-repeat;
+	background-size: cover;
+	border-radius: 50%;
+}
+
+.info {
+	display: flex;
+	flex-direction: column;
+}
+
+.name {
+	margin-bottom: 16px;
+	font-size: 32px;
+	font-weight: 700;
+	line-height: 44.8px;
+	color: #fff;
+}

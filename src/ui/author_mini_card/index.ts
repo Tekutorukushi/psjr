@@ -1,0 +1,1 @@
+export { AuthorMiniCard } from './author_mini_card'

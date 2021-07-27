@@ -7,7 +7,7 @@ import './app.scss'
 
 function App({ Component, pageProps, showAside = false }: AppProps) {
     return <>
-        <Header />
+        <Header isLogin />
         <div className='main'>
             <Component {...pageProps} />
             {showAside && <Aside />}

@@ -1,0 +1,49 @@
+.root {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: flex-start;
+	width: 100px;
+	cursor: pointer;
+	
+	&_small {
+		width: min-content;
+		
+		.avatar {
+			width: 56px;
+			height: 56px;
+		}
+	}
+	
+	&:hover {
+		
+		.avatar::before {
+			opacity: 1;
+		}
+		
+		.name {
+			color: var(--light-blue);
+		}
+	}
+}
+
+.avatar {
+	position: relative;
+	width: 72px;
+	height: 72px;
+	cursor: pointer;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: contain;
+	border-radius: 50%;
+}
+
+.name {
+	margin-top: 8px;
+	font-size: 12px;
+	font-weight: 600;
+	line-height: 16.8px;
+	color: #fff;
+	text-align: center;
+	transition: color var(--trs-speed);
+}

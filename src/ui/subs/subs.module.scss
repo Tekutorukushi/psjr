@@ -1,0 +1,21 @@
+.root {
+	display: flex;
+}
+
+.subs {
+	display: flex;
+	flex-direction: column;
+	gap: 24px;
+}
+
+.title {
+	font-size: 24px;
+	font-weight: 700;
+	line-height: 33.6px;
+	color: #fff;
+}
+
+.content_author {
+	display: flex;
+	gap: 32px;
+}

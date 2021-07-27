@@ -1,6 +1,5 @@
-// @ts-ignore
 import { useRef } from "react";
-// @ts-ignore
+import Link from 'next/link'
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Title, Type } from '@app/ui/title';
 import { IconArrowArt, IconArrowLeft, IconArrowRight } from '@app/ui/icons';
@@ -40,12 +39,14 @@ export const OtherArticle = ({ article }: OtherArticleProps) => {
 				>
 					{article.map(({link, avatar, title, time}, i) => (
 						<SwiperSlide key={i}>
-							<a href={link} className={style.article}>
-								<IconArrowArt className={style.arrow} />
-								<span className={style.avatar} style={{ backgroundImage: `url(${avatar})` }} />
-								<span className={style.title}>{title}</span>
-								<span className={style.time}>Читать {time}</span>
-							</a>
+							<Link href={link}>
+								<div className={style.article}>
+									<IconArrowArt className={style.arrow} />
+									<span className={style.avatar} style={{ backgroundImage: `url(${avatar})` }} />
+									<span className={style.title}>{title}</span>
+									<span className={style.time}>Читать {time}</span>
+								</div>
+							</Link>
 						</SwiperSlide>
 					))}
 				</Swiper>

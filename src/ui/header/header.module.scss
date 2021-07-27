@@ -1,65 +1,68 @@
 .header {
 	position: relative;
-	display: grid;
-	grid-template-columns: 1fr minmax(100px, 714px) 1fr;
-	align-items: center;
+	display: flex;
 	gap: 24px;
+	align-items: center;
+	justify-content: space-between;
+	height: 96px;
 	padding: 14px;
 	border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.logo {
+	width: 212px;
+	height: 35px;
+	background: url('../../images/logo.png') center / contain no-repeat;
+}
+
+.login {
+	display: flex;
+	gap: 24px;
+	align-items: center;
+	justify-self: flex-end;
+	padding-left: 24px;
+	font-size: 24px;
+	font-weight: 700;
+	line-height: 28px;
+	color: #fff;
+	cursor: pointer;
+	user-select: none;
+	border-left: 1px solid rgba(255, 255, 255, 0.3);
+	transition: color var(--trs-speed);
 	
-	.logo {
-		width: 212px;
-		height: 35px;
-		background: url('../../images/logo.png') center / contain no-repeat;
-	}
-	
-	.login {
-		display: flex;
-		gap: 24px;
-		align-items: center;
-		justify-self: flex-end;
-		padding-left: 24px;
-		font-size: 24px;
-		font-weight: 700;
-		line-height: 28px;
-		color: #fff;
-		cursor: pointer;
-		user-select: none;
-		border-left: 1px solid rgba(255, 255, 255, 0.3);
-		transition: color var(--trs-speed);
+	&:hover {
+		color: var(--blue);
 		
-		&:hover {
-			color: var(--blue);
-			
-			.icon {
-				background-color: var(--blue);
-			}
-		}
-		
-		&:active {
-			color: var(--light-blue);
-			
-			.icon {
-				background-color: var(--light-blue);
-			}
+		.icon path {
+			fill: var(--blue);
 		}
 	}
 	
-	.icon {
-		width: 32px;
-		height: 32px;
-		background-color: #fff;
-		-webkit-mask-position: center;
-		-webkit-mask-repeat: no-repeat;
-		-webkit-mask-size: contain;
-		transition: background-color var(--trs-speed);
-		-webkit-mask-image: url('../../images/icons/person.svg');
+	&:active {
+		color: var(--light-blue);
+		
+		.icon path {
+			fill: var(--light-blue);
+		}
+	}
+}
+
+.logout {
+	opacity: 0;
+}
+
+.icon {
+	display: flex;
+	
+	path {
+		transition: fill var(--trs-speed);
 	}
 }
 
 .input {
 	position: relative;
 	width: 100%;
+	max-width: 714px;
 	
 	button {
 		position: absolute;
@@ -102,8 +105,8 @@
 
 @media (max-width: 1100px) {
 	
-	.header {
-		grid-template-columns: 1fr minmax(100px, 436px) 1fr;
+	.input {
+		max-width: 463px;
 	}
 }
 
@@ -122,6 +125,7 @@
 		flex-wrap: wrap;
 		justify-content: space-between;
 		padding: 20px 20px 8px;
+		height: auto;
 		border: none;
 	}
 	

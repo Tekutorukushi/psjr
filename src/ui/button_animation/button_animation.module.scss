@@ -5,6 +5,7 @@
 	border-radius: 6px;
 	
 	&_text {
+		
 		.wrapper {
 			width: auto;
 			height: 64px;
@@ -73,6 +74,40 @@
 		}
 	}
 	
+	&_outline {
+		
+		.wrapper {
+			width: 200px;
+			height: 42px;
+			padding: 0;
+		}
+		
+		.video {
+			clip-path: url('#mask-outline');
+		}
+		
+		.svg {
+			position: relative;
+			
+			> rect {
+				display: block !important;
+				width: calc(100% - 4px);
+				height: calc(100% - 4px);
+				fill: #17171a;
+				mask: url('#mask-outline-text');
+			}
+			
+			clipPath rect {
+				width: 100%;
+				height: 100%;
+			}
+			
+			text {
+				font-size: initial;
+			}
+		}
+	}
+	
 	.svg > rect {
 		display: none;
 	}
@@ -86,8 +121,10 @@
 	height: 56px;
 	padding-right: 24px;
 	padding-left: 24px;
+	overflow: hidden;
 	cursor: pointer;
 	user-select: none;
+	border-radius: 6px;
 	
 	&:hover .video {
 		opacity: .8;
@@ -101,6 +138,7 @@
 	width: 100%;
 	height: 100%;
 	object-fit: cover;
+	clip-path: url('#mask');
 	transition: opacity var(--trs-speed);
 	
 	video {
