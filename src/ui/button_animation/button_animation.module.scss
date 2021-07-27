@@ -166,6 +166,14 @@
 	color: #fff;
 }
 
+.small {
+	
+	.wrapper {
+		height: 42px;
+		padding: 0 16px;
+	}
+}
+
 @media (max-width: 767px) {
 	
 	.wrapper {

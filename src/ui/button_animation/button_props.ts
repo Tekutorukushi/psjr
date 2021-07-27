@@ -2,7 +2,7 @@
 import React, { ReactNode } from 'react';
 
 export interface ButtonProps {
-	as?: string,
+	small?: boolean;
 	onClick?: void;
 	children?: React.ReactNode;
 }

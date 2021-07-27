@@ -7,10 +7,21 @@ import { AuthorPreviewCard } from '@app/ui/author_preview_card';
 import { Button } from '@app/ui/button';
 
 export const PageProfile = () => {
+	const authors = [
+		{avatar: '/mock/author.jpg', name: 'Darlene Robertson', onClick: undefined},
+		{avatar: '/mock/author.jpg', name: 'Jerome Bell', onClick: undefined},
+		{avatar: '/mock/author.jpg', name: 'Kathryn Murphy', onClick: undefined},
+		{avatar: '/mock/author.jpg', name: 'Marvin McKinney', onClick: undefined},
+		{avatar: '/mock/author.jpg', name: 'Theresa Webb', onClick: undefined},
+		{avatar: '/mock/author.jpg', name: 'Wade Warren', onClick: undefined},
+		{avatar: '/mock/author.jpg', name: 'Jerome Bell', onClick: undefined},
+		{avatar: '/mock/author.jpg', name: 'Jerome Bell', onClick: undefined},
+	]
+
 	return (
 		<div className={style.root}>
 			<ProfileCard name='Юрий Лоза' onClick={undefined} />
-			<Subs />
+			<Subs title='Вы подписаны:' authors={authors} />
 			<div className={style.content}>
 				<div className={style.content_button}>
 					<Button className={clsx(style.button, style.is_active)}>Понравилось</Button>

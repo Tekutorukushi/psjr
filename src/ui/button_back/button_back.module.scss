@@ -1,11 +1,10 @@
-.button {
+.root {
 	display: flex;
 	align-items: center;
-	padding: 21px 32px;
+	padding: 10px 0;
 	cursor: pointer;
 	user-select: none;
 	border-radius: 6px;
-	transition: color var(--trs-speed);
 	
 	span {
 		font-size: 18px;
@@ -20,6 +19,10 @@
 		span {
 			color: var(--blue);
 		}
+		
+		.icon svg path {
+			fill: var(--blue);
+		}
 	}
 	
 	&:active {
@@ -27,5 +30,19 @@
 		span {
 			color: var(--light-blue);
 		}
+		
+		.icon svg path {
+			fill: var(--light-blue);
+		}
+	}
+}
+
+.icon {
+	width: 14px;
+	height: 14px;
+	margin-right: 23px;
+	
+	path {
+		transition: fill var(--trs-speed);
 	}
 }

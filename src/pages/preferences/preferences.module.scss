@@ -1,6 +1,4 @@
 .preferences {
-	display: flex;
-	flex-direction: column;
 	width: 100%;
 	max-width: 714px;
 	margin-top: 16px;
@@ -20,8 +18,7 @@
 }
 
 .authors {
-	display: grid;
-	grid-template-columns: repeat(9, minmax(min-content, 1fr));
+	display: flex;
 	gap: 26px;
 	justify-items: center;
 }

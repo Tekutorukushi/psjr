@@ -1,0 +1,19 @@
+.root {
+	width: 100%;
+	max-width: 648px;
+	margin-top: 12px;
+}
+
+.title {
+	margin: 32px 0;
+	font-size: 64px;
+	font-weight: 800;
+	line-height: 76.8px;
+	color: #fff;
+}
+
+.content {
+	display: flex;
+	flex-direction: column;
+	gap: 64px;
+}

@@ -6,9 +6,9 @@ import clsx from 'clsx';
 import { ButtonProps } from './button_props'
 import style from './button_animation.module.scss';
 
-export const ButtonAnimation = ({ onClick, children }: ButtonProps) => {
+export const ButtonAnimation = ({ small, onClick, children }: ButtonProps) => {
 	return (
-		<div className={clsx(style.button, style.button_text)} onClick={onClick}>
+		<div className={clsx(style.button, style.button_text, small ? style.small : '' )} onClick={onClick}>
 			<div className={style.wrapper}>
 				<div className={style.video}>
 					<video playsInline autoPlay muted loop>

@@ -1,0 +1,33 @@
+.root {
+	display: flex;
+}
+
+.avatar {
+	width: 72px;
+	height: 72px;
+	margin-right: 32px;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+	border-radius: 50%;
+}
+
+.info {
+	display: flex;
+	flex-direction: column;
+}
+
+.name {
+	margin-bottom: 16px;
+	font-size: 32px;
+	font-weight: 700;
+	line-height: 44.8px;
+	color: #fff;
+}
+
+.button {
+	
+	.wrapper {
+		height: 42px;
+	}
+}

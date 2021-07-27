@@ -1,10 +1,10 @@
-import { Button } from '@app/ui/button';
-import { IconArrowLeft } from '@app/ui/icons/arrow_left';
+import { ButtonBack } from '@app/ui/button_back';
 import { AuthorChooseAvatar } from '@app/ui/author_choose_avatar';
 import { ButtonAnimationAuthor, ButtonAnimationCountry } from '@app/ui/button_animation';
 import { CountryCard } from '@app/ui/country_card/country_card';
 import { TagCard } from '@app/ui/tag_card';
 import { IconPencil, IconPhoto, IconPlay, IconSpeaker } from '@app/ui/icons';
+import { AuthorMiniCard } from '@app/ui/author_mini_card';
 
 import style from './preferences.module.scss'
 
@@ -14,6 +14,8 @@ export const PagePreferences = () => {
         {avatar: '/mock/author.jpg', name: 'Ronald Richards'},
         {avatar: '/mock/author.jpg', name: 'Brooklyn Simmons'},
         {avatar: '/mock/author.jpg', name: 'Brooklyn Simmons'},
+        {avatar: '/mock/author.jpg', name: 'Brooklyn Simmons'},
+        {avatar: '/mock/author.jpg', name: 'Esther Howards'},
         {avatar: '/mock/author.jpg', name: 'Esther Howards'},
         {avatar: '/mock/author.jpg', name: 'Esther Howards'},
         {avatar: '/mock/author.jpg', name: 'Brooklyn Simmons'},
@@ -40,12 +42,12 @@ export const PagePreferences = () => {
 
     return (
         <div className={style.preferences}>
-            <Button before={<IconArrowLeft />}>Назад</Button>
+            <ButtonBack>Назад</ButtonBack>
             <div className={style.container}>
                 <div className={style.content}>
                     <div className={style.authors}>
-                        {authors.map((item, i) => (
-                            <AuthorChooseAvatar small key={i} {...item} />
+                        {authors.slice(0, 9).map((item, i) => (
+                            <AuthorMiniCard small key={i} {...item} />
                         ))}
                     </div>
                     <ButtonAnimationAuthor />

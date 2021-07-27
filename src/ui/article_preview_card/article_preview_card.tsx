@@ -10,6 +10,7 @@ import style from './article_preview_card.module.scss'
 
 interface ArticlePreviewCardProps {
     secondary?: boolean;
+    author?: boolean;
     avatarAuthor?: string;
     linkAuthor?: string;
     onClickDownload?: void;
@@ -23,7 +24,7 @@ interface ArticlePreviewCardProps {
     linkArticle?: string;
 }
 
-export const ArticlePreviewCard = ({ secondary, avatarAuthor, linkAuthor, onClickDownload, onClickShare, title, type, date, time, content, listen, linkArticle }: ArticlePreviewCardProps) => {
+export const ArticlePreviewCard = ({ secondary, author, avatarAuthor, linkAuthor, onClickDownload, onClickShare, title, type, date, time, content, listen, linkArticle }: ArticlePreviewCardProps) => {
 
     const renderRead = () => (
         <>
@@ -54,6 +55,7 @@ export const ArticlePreviewCard = ({ secondary, avatarAuthor, linkAuthor, onClic
             <div className={style.body}>
                 <div className={style.bar}>
                     <ArticleButtonBar
+                        author={author}
                         avatarAuthor={avatarAuthor}
                         linkAuthor={linkAuthor}
                         onClickDownload={onClickDownload}
