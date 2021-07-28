@@ -1,7 +1,8 @@
 import { useState } from "react";
-import style from './search_author_card.module.scss'
 import { AuthorMiniCard } from '@app/ui/author_mini_card';
 import { Button } from '@app/ui/button';
+
+import style from './search_author_card.module.scss'
 
 interface SearchAuthorCardProps {
 	avatar?: string
