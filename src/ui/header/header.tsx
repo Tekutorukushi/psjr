@@ -1,7 +1,6 @@
-// @ts-ignore
 import Link from 'next/link'
-// @ts-ignore
 import clsx from 'clsx';
+import { InputSearch } from '@app/ui/input_search';
 import { IconPerson, IconCancel } from '@app/ui/icons';
 
 import style from './header.module.scss'
@@ -14,10 +13,7 @@ interface HeaderProps {
 export const Header = ({ className, isLogin }: HeaderProps) => {
     const renderLogin = () => (
         <>
-            <div className={style.input}>
-                <button />
-                <input placeholder='Поиск' />
-            </div>
+            <InputSearch className={style.search} placeholder='Поиск' />
             <div className={style.login}>
                 <span>Вход</span>
                 <IconPerson className={style.icon} />

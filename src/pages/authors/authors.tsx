@@ -1,4 +1,5 @@
 import { ButtonBack } from '@app/ui/button_back';
+import { useEvent } from 'effector-react/ssr';
 import { SwiperSlide } from "swiper/react";
 import { ButtonAnimationOutline } from '@app/ui/button_animation';
 import { SliderScroll } from '@app/ui/slider_scroll';
@@ -10,6 +11,7 @@ import "swiper/swiper.min.css";
 import "swiper/components/scrollbar/scrollbar.min.css"
 import "swiper/components/navigation/navigation.min.css"
 import style from './authors.module.scss'
+import { openSearch } from '@app/ui/search';
 
 interface PageAuthorsProps {
 	authors?: array;
@@ -23,6 +25,8 @@ export const PageAuthors = ({authors}: PageAuthorsProps) => {
 		{avatar: '/mock/author.jpg', name: 'Theresa Webb', onClick: undefined},
 		{avatar: '/mock/author.jpg', name: 'Dianne Russell', onClick: undefined},
 	]
+
+	const handleClick = useEvent(openSearch);
 
 	return (
 		<div className={style.root}>
@@ -39,7 +43,7 @@ export const PageAuthors = ({authors}: PageAuthorsProps) => {
 							<AuthorSlideCard all />
 						</SwiperSlide>
 					</SliderScroll>
-					<ButtonAnimationOutline>Все авторы</ButtonAnimationOutline>
+					<ButtonAnimationOutline onClick={handleClick}>Все авторы</ButtonAnimationOutline>
 				</div>
 				<div className={style.format}>
 					<Title type={Type.h2} as='h2'>Форматы:</Title>

@@ -1,0 +1,23 @@
+.modal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 999;
+  display: flex;
+  height: 100%;
+  padding: 20px;
+  overflow: auto;
+  background: rgba(23, 23, 26, 0.8);
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 600px;
+  padding: 40px 40px 10px;
+  margin: auto;
+  background: #232327;
+  border-radius: 6px;
+}

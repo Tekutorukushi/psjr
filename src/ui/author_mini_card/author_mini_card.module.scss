@@ -1,18 +1,31 @@
 .root {
 	display: flex;
 	flex-direction: column;
+	gap: 6px;
 	align-items: center;
 	justify-content: flex-start;
 	width: 100px;
 	height: 100%;
 	cursor: pointer;
 	
-	&_small {
+	&.small {
 		width: min-content;
 		
 		.avatar {
 			width: 56px;
 			height: 56px;
+		}
+	}
+	
+	&.row {
+		flex-direction: row;
+		gap: 24px;
+		
+		.name {
+			flex-direction: row;
+			gap: 5px;
+			font-size: 18px;
+			line-height: 25.2px;
 		}
 	}
 	
@@ -42,7 +55,6 @@
 .name {
 	display: flex;
 	flex-direction: column;
-	margin-top: 8px;
 	font-size: 12px;
 	font-weight: 600;
 	line-height: 16.8px;
