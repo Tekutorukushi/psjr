@@ -4,18 +4,39 @@
 	gap: 8px;
 	width: 100%;
 	max-width: 484px;
-	transform: translateX(122px);
-	
-	.container {
-		padding: 24px;
-		background: #0F0F12;
-		border-radius: 6px;
-	}
+	margin-top: 50px;
+}
+
+.container {
+	padding: 24px;
+	background: #0F0F12;
+	border-radius: 6px;
+}
+
+.authors {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 26px;
+	justify-content: space-between;
+	margin-bottom: 26px;
+}
+
+.countries {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 16px;
+	margin-bottom: 26px;
+}
+
+.tags {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 16px;
 }
 
 @media (max-width: 1300px) {
+	
 	.aside {
 		max-width: 327px;
-		transform: translateX(100px);
 	}
 }

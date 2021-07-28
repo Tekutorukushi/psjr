@@ -1,1 +1,1 @@
-export { FeedPage } from './feed';
+export { PageFeed } from './feed';

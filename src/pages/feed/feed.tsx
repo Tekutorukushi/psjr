@@ -1,11 +1,12 @@
 import {ArticlePreviewCard} from "@app/ui/article_preview_card";
 import {AuthorPreviewCard} from "@app/ui/author_preview_card/author_preview_card";
+import { Container } from '@app/ui/container';
 
 import style from './feed.module.scss'
 
-export const FeedPage = () => {
+export const PageFeed = () => {
     return (
-        <div className={style.feed}>
+        <Container className={style.feed}>
             <ArticlePreviewCard
                 avatarAuthor={'/mock/author.jpg'}
                 linkAuthor='/'
@@ -39,6 +40,6 @@ export const FeedPage = () => {
                 content={<><img src='/mock/uganda.jpg' alt=''/></>}
                 linkArticle='/page'
             />
-        </div>
+        </Container>
     );
 };

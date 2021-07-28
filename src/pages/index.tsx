@@ -1,4 +1,4 @@
-import {FeedPage} from "@app/pages/feed";
+import {PageFeed} from "@app/pages/feed";
 import { PagePreferences } from '@app/pages/preferences';
 import { PageLogin } from '@app/pages/login';
 import { PageArticle } from '@app/pages/article';
@@ -8,6 +8,6 @@ import { PageAuthor } from '@app/pages/author';
 import { PageAuthors } from '@app/pages/authors';
 
 export default function Home() {
-  return (<PageAuthors />)
+  return (<PageFeed />)
 }
 

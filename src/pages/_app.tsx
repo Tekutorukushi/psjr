@@ -10,7 +10,7 @@ import './app.scss'
 
 let clientScope: Scope;
 
-function App({ Component, pageProps, showAside = false }: AppProps) {
+function App({ Component, pageProps, showAside = true }: AppProps) {
     const scope = fork(root, {
         values: {
             ...(clientScope ? serialize(clientScope, { onlyChanges: true }) : {}),

@@ -13,12 +13,8 @@ import "swiper/components/navigation/navigation.min.css"
 import style from './authors.module.scss'
 import { openSearch } from '@app/ui/search';
 
-interface PageAuthorsProps {
-	authors?: array;
-}
-
-export const PageAuthors = ({authors}: PageAuthorsProps) => {
-	authors = [
+export const PageAuthors = () => {
+	const authors = [
 		{avatar: '/mock/author.jpg', name: 'Cody Fisher', onClick: undefined},
 		{avatar: '/mock/author.jpg', name: 'Floyd Miles', onClick: undefined},
 		{avatar: '/mock/author.jpg', name: 'Wade Warren', onClick: undefined},
