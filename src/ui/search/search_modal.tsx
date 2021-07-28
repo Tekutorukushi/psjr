@@ -6,8 +6,8 @@ import { InputSearch } from '@app/ui/input_search';
 import { IconCancel } from '@app/ui/icons';
 
 import style from './search_modal.module.scss'
-import { SearchCountryCard } from '@app/ui/search/search_country_card';
-import { SearchAuthorCard } from '@app/ui/search/search_author_card';
+import { SearchCountryCard } from '@app/ui/search_country_card';
+import { SearchAuthorCard } from '@app/ui/search_author_card';
 
 export const SearchModal = () => {
   const isOpen = useStore($searchIsOpen);

@@ -1,0 +1,1 @@
+export { SearchAuthorCard } from './search_author_card'
