@@ -1,0 +1,38 @@
+.root {
+	display: flex;
+	gap: 24px;
+	align-items: center;
+	cursor: pointer;
+	user-select: none;
+	
+	&:hover {
+		
+		.name {
+			color: var(--blue);
+		}
+	}
+	
+	&:active {
+		
+		.name {
+			color: var(--light-blue);
+		}
+	}
+}
+
+.icon {
+	flex-shrink: 0;
+	width: 56px;
+	height: 56px;
+	background-repeat: no-repeat;
+	background-size: contain;
+	border-radius: 50%;
+}
+
+.name {
+	font-size: 18px;
+	font-weight: 600;
+	line-height: 25.2px;
+	color: #fff;
+	transition: color var(--trs-speed);
+}
