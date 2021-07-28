@@ -1,0 +1,1 @@
+export { PageAuthors } from './authors'

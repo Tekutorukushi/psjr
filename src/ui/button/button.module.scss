@@ -1,11 +1,12 @@
 .button {
 	display: flex;
 	align-items: center;
+	justify-content: center;
 	padding: 21px 32px;
 	cursor: pointer;
 	user-select: none;
 	border-radius: 6px;
-	transition: color var(--trs-speed);
+	transition: background var(--trs-speed);
 	
 	span {
 		font-size: 18px;
@@ -27,5 +28,44 @@
 		span {
 			color: var(--light-blue);
 		}
+	}
+}
+
+.small {
+	padding: 10px;
+	
+	span {
+		font-size: 16px;
+		line-height: 19.2px;
+	}
+}
+
+.secondary {
+	background: var(--blue);
+	
+	span {
+		color: #fff !important;
+	}
+	
+	&:hover {
+		background: var(--dark-blue);
+	}
+	
+	&:active {
+		background: var(--light-blue);
+	}
+}
+
+.outline {
+	height: 39px;
+	border: 1px solid #fff;
+	transition: border-color var(--trs-speed);
+	
+	&:hover {
+		border-color: var(--dark-blue);
+	}
+	
+	&:active {
+		border-color: var(--light-blue);
 	}
 }

@@ -29,5 +29,6 @@ declare namespace JSX {
         ul: any;
         li: any;
         ol: any;
+        label: any;
     }
 }

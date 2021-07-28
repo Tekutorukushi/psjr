@@ -4,6 +4,7 @@
 	align-items: center;
 	justify-content: flex-start;
 	width: 100px;
+	height: 100%;
 	cursor: pointer;
 	
 	&_small {
@@ -39,6 +40,8 @@
 }
 
 .name {
+	display: flex;
+	flex-direction: column;
 	margin-top: 8px;
 	font-size: 12px;
 	font-weight: 600;

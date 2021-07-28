@@ -4,8 +4,8 @@ import React, { ReactNode } from 'react';
 import style from './tag_card.module.scss'
 
 interface TagCardProps {
-	icon?: ReactNode;
-	name?: ReactNode;
+	icon?: React.ReactNode;
+	name?: React.ReactNode;
 }
 
 export const TagCard = ({ icon, name }: TagCardProps) => {

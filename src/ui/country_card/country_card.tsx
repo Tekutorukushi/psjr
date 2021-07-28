@@ -5,7 +5,7 @@ import style from './country_card.module.scss';
 
 interface CountryCardProps {
 	icon?: string;
-	name?: ReactNode;
+	name?: React.ReactNode;
 }
 
 export const CountryCard = ({icon, name}: CountryCardProps) => {

@@ -1,4 +1,3 @@
-// @ts-ignore
 import React, { ReactNode } from 'react';
 
 export interface ButtonProps {

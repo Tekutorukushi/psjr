@@ -1,6 +1,3 @@
-// @ts-ignore
-import React, { ReactNode } from 'react';
-// @ts-ignore
 import clsx from 'clsx';
 
 import { ButtonProps } from './button_props'

@@ -1,0 +1,1 @@
+export { AuthorSlideCard } from './author_slide_card'

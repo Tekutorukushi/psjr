@@ -5,8 +5,9 @@ import { PageArticle } from '@app/pages/article';
 import { PageProfile } from '@app/pages/profile';
 import { PageCountry } from '@app/pages/country';
 import { PageAuthor } from '@app/pages/author';
+import { PageAuthors } from '@app/pages/authors';
 
 export default function Home() {
-  return (<PageAuthor />)
+  return (<PageAuthors />)
 }
 

@@ -1,6 +1,3 @@
-// @ts-ignore
-import React, { ReactNode } from 'react';
-
 import { ButtonProps } from './button_props'
 import style from './button_animation.module.scss';
 

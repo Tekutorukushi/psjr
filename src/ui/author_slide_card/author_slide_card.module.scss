@@ -1,0 +1,57 @@
+.root {
+	display: flex;
+	flex-direction: column;
+	gap: 16px;
+	align-items: center;
+	height: 100%;
+	padding: 24px;
+	background: #101013;
+	border-radius: 14px;
+}
+
+.button {
+	width: 136px;
+}
+
+.header {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	margin-bottom: 16px;
+}
+
+.avatar {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: relative;
+	width: 72px;
+	height: 72px;
+	overflow: hidden;
+	border-radius: 50%;
+}
+
+.video {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	object-fit: cover;
+}
+
+.icon {
+	position: relative;
+	width: 14px;
+	height: 14px;
+}
+
+.text {
+	margin-top: 8px;
+	font-size: 12px;
+	font-weight: 600;
+	line-height: 16.8px;
+	color: #fff;
+	text-align: center;
+}

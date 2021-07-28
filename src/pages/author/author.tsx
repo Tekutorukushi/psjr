@@ -1,9 +1,9 @@
 import { ButtonBack } from '@app/ui/button_back';
 import { ArticlePreviewCard } from '@app/ui/article_preview_card';
-
-import style from './author.module.scss'
 import { AuthorSubCard } from '@app/ui/author_sub_card';
 import { Subs } from '@app/ui/subs';
+
+import style from './author.module.scss'
 
 export const PageAuthor = () => {
 	const authors = [

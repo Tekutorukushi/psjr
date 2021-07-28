@@ -2,6 +2,7 @@
 
 :root {
 	--blue: #0178FF;
+	--dark-blue: #0127F1;
 	--light-blue: #71BBFF;
 	--bg: #252528;
 	--bg-hover: #202029;
@@ -38,68 +39,5 @@ a {
 		padding-right: 20px;
 		padding-left: 20px;
 		margin-top: 0;
-	}
-}
-
-.swiper-container {
-	width: 100%;
-	max-width: 560px;
-	overflow: initial !important;
-}
-
-.swiper-slide {
-	width: auto !important;
-}
-
-.swiper-navigation {
-	display: flex;
-	gap: 32px;
-	align-items: center;
-}
-
-.swiper-arrows {
-	display: flex;
-	user-select: none;
-}
-
-.swiper-arrow {
-	display: flex !important;
-	align-items: center;
-	width: 42px !important;
-	height: 42px !important;
-	cursor: pointer;
-	
-	&_next {
-		justify-content: flex-end;
-	}
-	
-	&.swiper-button-disabled {
-		pointer-events: none;
-		opacity: .2;
-	}
-	
-	svg {
-		width: 14px;
-		height: 14px;
-	}
-}
-
-.swiper-button-prev, .swiper-button-next {
-	all: unset !important;
-	
-	&::after {
-		display: none;
-	}
-}
-
-.swiper-scrollbar {
-	width: 100%;
-	height: 8px;
-	background: #232327 !important;
-	border-radius: 2px !important;
-	
-	&-drag {
-		background: #3C3C43 !important;
-		border-radius: 2px !important;
 	}
 }

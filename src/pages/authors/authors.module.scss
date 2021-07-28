@@ -1,0 +1,29 @@
+.root {
+	width: 100%;
+	max-width: 714px;
+	margin-top: 12px;
+}
+
+.content {
+	display: flex;
+	flex-direction: column;
+	gap: 60px;
+}
+
+.slider {
+	display: grid;
+	gap: 24px;
+	margin-top: 24px;
+}
+
+.format {
+	display: flex;
+	flex-direction: column;
+	gap: 24px;
+	
+	&-content {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 16px;
+	}
+}
