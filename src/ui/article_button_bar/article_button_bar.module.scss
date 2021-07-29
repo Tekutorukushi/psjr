@@ -1,7 +1,7 @@
 .root {
 	display: flex;
 	flex-direction: column;
-	gap: 40px;
+	gap: 40px 32px;
 	align-items: center;
 }
 
@@ -43,7 +43,12 @@
 @media (max-width: 767px) {
 	
 	.root {
-		margin-top: 24px;
 		flex-direction: row;
+		margin-top: 24px;
+	}
+	
+	.avatar {
+		width: 40px;
+		height: 40px;
 	}
 }

@@ -7,6 +7,7 @@ import {Header} from "@app/ui/header";
 import {Aside} from "@app/ui/aside";
 import { SearchModal } from '@app/ui/search';
 import './app.scss'
+import { useWindowSize } from '@app/lib/WindowSize';
 
 let clientScope: Scope;
 
@@ -22,12 +23,14 @@ function App({ Component, pageProps, showAside = true }: AppProps) {
         clientScope = scope;
     }
 
+    const { width } = useWindowSize();
+
     return (
         <Provider value={scope}>
             <Header isLogin={false} />
             <div className='main'>
                 <Component {...pageProps} />
-                {showAside && <Aside />}
+                {width > 999 ? showAside && <Aside /> : ''}
                 <SearchModal />
             </div>
         </Provider>

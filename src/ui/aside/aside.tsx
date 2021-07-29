@@ -9,17 +9,17 @@ import style from './aside.module.scss'
 
 export const Aside = () => {
     const authors = [
-        {avatar: '/mock/author.jpg', name: 'Cody Fisher', onClick: undefined},
-        {avatar: '/mock/author.jpg', name: 'Cody Fisher', onClick: undefined},
-        {avatar: '/mock/author.jpg', name: 'Floyd Miles', onClick: undefined},
-        {avatar: '/mock/author.jpg', name: 'Floyd Miles', onClick: undefined},
-        {avatar: '/mock/author.jpg', name: 'Floyd Miles', onClick: undefined},
-        {avatar: '/mock/author.jpg', name: 'Wade Warren', onClick: undefined},
-        {avatar: '/mock/author.jpg', name: 'Wade Warren', onClick: undefined},
-        {avatar: '/mock/author.jpg', name: 'Theresa Webb', onClick: undefined},
-        {avatar: '/mock/author.jpg', name: 'Theresa Webb', onClick: undefined},
-        {avatar: '/mock/author.jpg', name: 'Dianne Russell', onClick: undefined},
-        {avatar: '/mock/author.jpg', name: 'Dianne Russell', onClick: undefined},
+        {avatar: '/mock/author.jpg', name: 'Cody Fisher'},
+        {avatar: '/mock/author.jpg', name: 'Cody Fisher'},
+        {avatar: '/mock/author.jpg', name: 'Floyd Miles'},
+        {avatar: '/mock/author.jpg', name: 'Floyd Miles'},
+        {avatar: '/mock/author.jpg', name: 'Floyd Miles'},
+        {avatar: '/mock/author.jpg', name: 'Wade Warren'},
+        {avatar: '/mock/author.jpg', name: 'Wade Warren'},
+        {avatar: '/mock/author.jpg', name: 'Theresa Webb'},
+        {avatar: '/mock/author.jpg', name: 'Theresa Webb'},
+        {avatar: '/mock/author.jpg', name: 'Dianne Russell'},
+        {avatar: '/mock/author.jpg', name: 'Dianne Russell'},
     ]
 
     const countries = [
@@ -47,7 +47,7 @@ export const Aside = () => {
             <div className={style.container}>
                 <div className={style.authors}>
                     {authors.slice(0, 10).map((item, i) => (
-                        <AuthorMiniCard small {...item} />
+                        <AuthorMiniCard small key={i} {...item} />
                     ))}
                 </div>
                 <ButtonAnimationAuthor>Все авторы</ButtonAnimationAuthor>
@@ -55,7 +55,7 @@ export const Aside = () => {
             <div className={style.container}>
                 <div className={style.countries}>
                     {countries.slice(0, 8).map((item, i) => (
-                        <CountryCard {...item} />
+                        <CountryCard key={i} {...item} />
                     ))}
                 </div>
                 <ButtonAnimationCountry>Все авторы</ButtonAnimationCountry>

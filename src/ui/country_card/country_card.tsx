@@ -9,7 +9,7 @@ interface CountryCardProps {
 
 export const CountryCard = ({icon, name}: CountryCardProps) => {
 	return (
-		<div className={style.country}>
+		<div className={style.root}>
 			<div className={style.icon} style={{ backgroundImage: `url(${icon})` }} />
 			<div className={style.name}>{name}</div>
 		</div>

@@ -50,14 +50,13 @@ export const AudioWave = ({ url }: AudioWaveProps) => {
   };
 
   return (
-      <div>
-        <div id="waveform" ref={waveformRef} />
-        <div className={style.button}>
-          {!playing ?
-              <ButtonAnimationPause onClick={handlePlayPause}>Слушать</ButtonAnimationPause> :
-              <ButtonAnimationPlay onClick={handlePlayPause}>Пауза</ButtonAnimationPlay>
-          }
-        </div>
+      <div className={style.root}>
+		  <div id="waveform" ref={waveformRef} />
+			  {!playing ?
+				  <ButtonAnimationPause onClick={handlePlayPause}>Слушать</ButtonAnimationPause>
+				  :
+				  <ButtonAnimationPlay onClick={handlePlayPause}>Пауза</ButtonAnimationPlay>
+			  }
       </div>
-  );
+  )
 }

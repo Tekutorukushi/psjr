@@ -1,7 +1,7 @@
 .header {
 	position: relative;
 	display: flex;
-	gap: 24px;
+	gap: 32px 24px;
 	align-items: center;
 	justify-content: space-between;
 	height: 96px;
@@ -53,6 +53,8 @@
 
 .icon {
 	display: flex;
+	width: 48px;
+	height: 48px;
 	
 	path {
 		transition: fill var(--trs-speed);
@@ -103,23 +105,12 @@
 		}
 	}
 	
+	.icon {
+		width: 32px;
+		height: 32px;
+	}
+	
 	.search {
 		order: 3;
-		margin-top: 32px;
-		
-		input {
-			height: 40px;
-			padding-left: 44px;
-			font-size: 15px;
-			color: rgba(255, 255, 255, 0.5);
-			background: rgba(255, 255, 255, 0.1);
-		}
-		
-		button {
-			left: 15px;
-			width: 24px;
-			height: 24px;
-			background-color: rgba(255, 255, 255, 0.5);
-		}
 	}
 }
