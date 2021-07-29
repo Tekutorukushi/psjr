@@ -1,4 +1,4 @@
-.aside {
+.root {
 	display: flex;
 	flex-direction: column;
 	gap: 8px;
@@ -17,13 +17,12 @@
 	display: flex;
 	flex-wrap: wrap;
 	gap: 26px;
-	justify-content: space-between;
 	margin-bottom: 26px;
 }
 
 .countries {
 	display: grid;
-	grid-template-columns: 1fr 1fr;
+	grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
 	gap: 16px;
 	margin-bottom: 26px;
 }
@@ -36,7 +35,24 @@
 
 @media (max-width: 1300px) {
 	
-	.aside {
-		max-width: 327px;
+	.root {
+		max-width: 363px;
+	}
+	
+	.authors {
+		max-height: 215px;
+		overflow: hidden;
+	}
+	
+	.countries {
+		max-height: 305px;
+		overflow: hidden;
+	}
+}
+
+@media (max-width: 999px) {
+	
+	.root {
+		display: none;
 	}
 }

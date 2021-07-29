@@ -1,10 +1,11 @@
-import style from './aside.module.scss'
 import { InputSearch } from '@app/ui/input_search';
 import { ButtonAnimationAuthor, ButtonAnimationCountry } from '@app/ui/button_animation';
 import { AuthorMiniCard } from '@app/ui/author_mini_card';
 import { CountryCard } from '@app/ui/country_card';
 import { TagCard } from '@app/ui/tag_card';
 import { IconPencil, IconPhoto, IconPlay, IconSpeaker } from '@app/ui/icons';
+
+import style from './aside.module.scss'
 
 export const Aside = () => {
     const authors = [
@@ -41,7 +42,7 @@ export const Aside = () => {
     ]
 
     return (
-        <aside className={style.aside}>
+        <aside className={style.root}>
             <InputSearch placeholder='Поиск' />
             <div className={style.container}>
                 <div className={style.authors}>

@@ -24,7 +24,7 @@ function App({ Component, pageProps, showAside = true }: AppProps) {
 
     return (
         <Provider value={scope}>
-            <Header isLogin />
+            <Header isLogin={false} />
             <div className='main'>
                 <Component {...pageProps} />
                 {showAside && <Aside />}
