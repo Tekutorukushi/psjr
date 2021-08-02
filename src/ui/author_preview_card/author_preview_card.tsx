@@ -27,9 +27,11 @@ export const AuthorPreviewCard = ({secondary}: AuthorPreviewCardProps) => {
             <div className={style.container}>
                 {secondary ? <Title type={Type.h2} as='h2'>Выбери любимых авторов</Title> : <Title type={Type.h1} as='h1'>Выбери любимых авторов</Title>}
                 <div className={style.content}>
-                    {authors.slice(0, 8).map((item, i) => (
-                      <AuthorChooseAvatar key={i} {...item} />
-                    ))}
+                    <div className={style.wrapper}>
+                        {authors.slice(0, 8).map((item, i) => (
+                            <AuthorChooseAvatar key={i} {...item} />
+                        ))}
+                    </div>
                 </div>
                 <Link href='#'>
                     <a><ButtonAnimationAuthor /></a>

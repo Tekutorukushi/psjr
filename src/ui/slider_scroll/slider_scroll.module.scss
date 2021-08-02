@@ -76,3 +76,14 @@
 		display: none;
 	}
 }
+
+@media (max-width: 767px) {
+	
+	.root {
+		gap: 16px;
+	}
+	
+	.swiper_navigation {
+		display: none;
+	}
+}

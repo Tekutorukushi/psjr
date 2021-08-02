@@ -15,7 +15,33 @@
 	color: #fff;
 }
 
-.content_author {
+.content {
+	display: flex;
+}
+
+.wrapper {
 	display: flex;
 	gap: 32px;
+}
+
+.more {
+	font-size: 18px;
+	font-weight: 700;
+	color: #fff;
+	cursor: pointer;
+}
+
+@media (max-width: 600px) {
+
+	.content {
+		width: calc(100% + 40px);
+		margin-left: -20px;
+		overflow: auto;
+		
+		&::before, &::after {
+			min-width: 20px;
+			height: 20px;
+			content: '';
+		}
+	}
 }

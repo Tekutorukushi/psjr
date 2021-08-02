@@ -15,16 +15,20 @@ export const Header = ({ className, isLogin }: HeaderProps) => {
         <>
             <InputSearch className={style.search} placeholder='Поиск' />
             <div className={style.login}>
-                <span>Вход</span>
-                <IconPerson className={style.icon} />
+                <div className={style.login__inner}>
+                    <span>Вход</span>
+                    <IconPerson className={style.icon} />
+                </div>
             </div>
         </>
     )
 
     const renderLogout = () => (
         <div className={style.login}>
-            <span className={style.logout}>Вход</span>
-            <IconCancel className={style.icon} />
+            <div className={style.login__inner}>
+                <span className={style.logout}>Вход</span>
+                <IconCancel className={style.icon} />
+            </div>
         </div>
     )
 

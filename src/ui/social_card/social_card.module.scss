@@ -1,6 +1,8 @@
-.social {
+.root {
 	display: flex;
+	flex-wrap: wrap;
 	gap: 24px;
+	justify-content: center;
 }
 
 .item {
@@ -27,6 +29,25 @@
 		
 		.icon path {
 			fill: var(--light-blue)
+		}
+	}
+}
+
+@media (max-width: 600px) {
+	
+	.root {
+		display: grid;
+		grid-template-rows: auto auto;
+		grid-auto-flow: column;
+	}
+
+	.item {
+		width: 56px;
+		height: 56px;
+		
+		svg {
+			width: 40px;
+			height: 40px;
 		}
 	}
 }

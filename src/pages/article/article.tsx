@@ -1,16 +1,17 @@
-import { IconArrowLeft } from '@app/ui/icons/arrow_left';
-import { Button } from '@app/ui/button';
 import { ArticleInformers } from '@app/ui/acticle_informers';
 import { ArticleButtonBar } from '@app/ui/article_button_bar';
 import { SwiperSlide } from "swiper/react";
 import { SliderScroll } from '@app/ui/slider_scroll';
 import { OtherArticle } from '@app/ui/other_article';
 
-import style from './article.module.scss'
 import { ButtonBack } from '@app/ui/button_back';
 import { Title, Type } from '@app/ui/title';
+import style from './article.module.scss'
+import { useWindowSize } from '@app/lib/WindowSize';
 
 export const PageArticle = () => {
+	const { width } = useWindowSize();
+
 	const links = [
 		{link: 'one', name: 'Оглавление 1'},
 		{link: 'two', name: 'Оглавление 2'},
@@ -35,12 +36,14 @@ export const PageArticle = () => {
 			<h1 className={style.title}>Илья Красильщик завидно рассказывает про Кению и Уганду</h1>
 			<ArticleInformers date='вчера' time='2 часа' />
 			<div className={style.container}>
-				<ArticleButtonBar
-					avatarAuthor={'/mock/author.jpg'}
-					linkAuthor='/'
-					onClickShare={undefined}
-					onClickDownload={undefined}
-				/>
+				{width > 999 &&
+					<ArticleButtonBar
+					  avatarAuthor={'/mock/author.jpg'}
+					  linkAuthor='/'
+					  onClickShare={undefined}
+					  onClickDownload={undefined}
+					/>
+				}
 				<div className={style.info}>
 					<div className={style.links}>
 						{links.map(({link, name}, i) => (

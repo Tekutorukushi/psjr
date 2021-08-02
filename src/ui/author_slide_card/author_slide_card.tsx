@@ -40,7 +40,7 @@ export const AuthorSlideCard = ({all, avatar, name}: AuthorSlideCardProps) => {
 				</div>
 				<div className={style.text}>Все <br/>авторы</div>
 			</div>
-			<Button small outline>Смотреть</Button>
+			<Button className={style.button} small outline>Смотреть</Button>
 		</>
 	)
 

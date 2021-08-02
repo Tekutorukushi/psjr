@@ -11,7 +11,7 @@ export const PageLogin = () => {
 			<div className={style.subtitle}>Настраивай ленту, подписывайся на авторов, читай уникальный контент</div>
 			<div className={style.enter}>
 				<Input placeholder='Почта' />
-				<ButtonAnimation>Войти через почту</ButtonAnimation>
+				<ButtonAnimation className={style.button}>Войти через почту</ButtonAnimation>
 			</div>
 			<div className={style.or}>Или через соцсеть</div>
 			<SocialCard />

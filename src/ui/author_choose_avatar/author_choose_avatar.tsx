@@ -15,10 +15,12 @@ export const AuthorChooseAvatar = ({ avatar, name }: AuthorChooseAvatarProps) =>
         setChoose(!choose);
     };
 
+    const abr = name.substring(0, 1)
+
     return (
         <div className={`${style.author} ${choose ? `${style.author_active}` : ''}`} onClick={toggle}>
             <div className={style.avatar} style={{ backgroundImage: `url(${avatar})` }} />
-            <div className={style.name}>{name}</div>
+            <div className={style.name}>{name.split(' ').map((item, i) => <span key={i}>{ item }</span>)}</div>
         </div>
     );
 }

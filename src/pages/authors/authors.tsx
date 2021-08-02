@@ -1,7 +1,7 @@
 import { ButtonBack } from '@app/ui/button_back';
 import { useEvent } from 'effector-react/ssr';
 import { SwiperSlide } from "swiper/react";
-import { ButtonAnimationOutline } from '@app/ui/button_animation';
+import { ButtonAnimationAuthor } from '@app/ui/button_animation';
 import { SliderScroll } from '@app/ui/slider_scroll';
 import { AuthorSlideCard } from '@app/ui/author_slide_card';
 import { Title, Type } from '@app/ui/title';
@@ -39,7 +39,7 @@ export const PageAuthors = () => {
 							<AuthorSlideCard all />
 						</SwiperSlide>
 					</SliderScroll>
-					<ButtonAnimationOutline onClick={handleClick}>Все авторы</ButtonAnimationOutline>
+					<ButtonAnimationAuthor onClick={handleClick} />
 				</div>
 				<div className={style.format}>
 					<Title type={Type.h2} as='h2'>Форматы:</Title>

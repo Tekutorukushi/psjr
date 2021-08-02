@@ -5,6 +5,7 @@ import SwiperCore, { Scrollbar, Navigation } from 'swiper/core';
 import { Title, Type } from '@app/ui/title';
 import { IconArrowLeft, IconArrowRight } from '@app/ui/icons';
 
+import { useWindowSize } from '@app/lib/WindowSize';
 import style from './slider_scroll.module.scss';
 
 SwiperCore.use([Scrollbar, Navigation]);
@@ -16,6 +17,7 @@ interface SliderScrollProps {
 
 export const SliderScroll = ({title, children}: SliderScrollProps) => {
 	const swiperRef = useRef(null);
+	const { width } = useWindowSize();
 
 	return (
 		<div className={style.root}>
@@ -39,10 +41,12 @@ export const SliderScroll = ({title, children}: SliderScrollProps) => {
 			</Swiper>
 			<div className={style.swiper_navigation}>
 				<div className={style.swiper_arrows}>
-					<IconArrowLeft className={clsx(`swiper_arrow_prev`, style.swiper_arrow, style.swiper_arrow_prev)} onClick={() => swiperRef.current.swiper.slidePrev()} />
-					<IconArrowRight className={clsx(`swiper_arrow_next`,style.swiper_arrow, style.swiper_arrow_next)} onClick={() => swiperRef.current.swiper.slideNext()} />
+					<IconArrowLeft className={clsx(`swiper_arrow_prev`, style.swiper_arrow, style.swiper_arrow_prev)}
+								   onClick={() => swiperRef.current.swiper.slidePrev()} />
+					<IconArrowRight className={clsx(`swiper_arrow_next`, style.swiper_arrow, style.swiper_arrow_next)}
+									onClick={() => swiperRef.current.swiper.slideNext()} />
 				</div>
-				<div className="swiper-scrollbar" />
+				<div className='swiper-scrollbar' />
 			</div>
 		</div>
 	)

@@ -14,8 +14,41 @@
 
 .content {
 	display: flex;
-	flex-wrap: wrap;
-	gap: 32px 48px;
 	margin-top: 32px;
 	margin-bottom: 32px;
+}
+
+.wrapper {
+	display: grid;
+	grid-template-rows: auto auto;
+	grid-auto-flow: column;
+	gap: 32px 48px;
+}
+
+@media (max-width: 600px) {
+	
+	.content {
+		width: calc(100% + 40px);
+		margin-left: -20px;
+		overflow-x: scroll;
+		
+		&::before {
+			width: 20px;
+			min-width: 20px;
+			height: 20px;
+			content: '';
+		}
+		
+		&::after {
+			width: 20px;
+			min-width: 20px;
+			height: 20px;
+			content: '';
+		}
+	}
+	
+	.wrapper {
+		position: relative;
+		gap: 32px;
+	}
 }

@@ -78,13 +78,15 @@
 		height: 32px;
 		content: '';
 		background: url('../../images/icons/done-round.svg') center / contain no-repeat;
-		transform: translateX(-50%);
 		opacity: 0;
 		transition: opacity var(--trs-speed);
+		transform: translateX(-50%);
 	}
 }
 
 .name {
+	display: flex;
+	flex-direction: column;
 	margin-top: 16px;
 	font-size: 18px;
 	font-weight: 600;
@@ -92,4 +94,27 @@
 	color: #fff;
 	text-align: center;
 	transition: color var(--trs-speed);
+}
+
+@media (max-width: 600px) {
+
+	.author {
+		width: 72px;
+	}
+	
+	.avatar {
+		width: 72px;
+		height: 72px;
+		
+		&::after {
+			width: 23px;
+			height: 23px;
+		}
+	}
+	
+	.name {
+		margin-top: 8px;
+		font-size: 12px;
+		line-height: 16.8px;
+	}
 }

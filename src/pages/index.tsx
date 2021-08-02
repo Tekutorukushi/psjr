@@ -8,6 +8,6 @@ import { PageAuthor } from '@app/pages/author';
 import { PageAuthors } from '@app/pages/authors';
 
 export default function Home() {
-  return (<PageFeed />)
+  return (<PageAuthors />)
 }
 

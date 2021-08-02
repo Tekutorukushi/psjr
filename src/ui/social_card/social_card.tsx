@@ -4,7 +4,7 @@ import style from './social_card.module.scss'
 
 export const SocialCard = () => {
 	return (
-		<div className={style.social}>
+		<div className={style.root}>
 			<div className={style.item}>
 				<IconGoogle className={style.icon} />
 			</div>

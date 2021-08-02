@@ -11,7 +11,7 @@ import { useWindowSize } from '@app/lib/WindowSize';
 
 let clientScope: Scope;
 
-function App({ Component, pageProps, showAside = true }: AppProps) {
+function App({ Component, pageProps, showAside = false }: AppProps) {
     const scope = fork(root, {
         values: {
             ...(clientScope ? serialize(clientScope, { onlyChanges: true }) : {}),
@@ -27,7 +27,7 @@ function App({ Component, pageProps, showAside = true }: AppProps) {
 
     return (
         <Provider value={scope}>
-            <Header isLogin={false} />
+            <Header isLogin={true} />
             <div className='main'>
                 <Component {...pageProps} />
                 {width > 999 ? showAside && <Aside /> : ''}

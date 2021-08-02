@@ -1,10 +1,11 @@
 import clsx from 'clsx';
 import { ProfileCard } from '@app/ui/profile_card';
-import style from './profile.module.scss'
 import { Subs } from '@app/ui/subs';
 import { ArticlePreviewCard } from '@app/ui/article_preview_card';
 import { AuthorPreviewCard } from '@app/ui/author_preview_card';
 import { Button } from '@app/ui/button';
+
+import style from './profile.module.scss'
 
 export const PageProfile = () => {
 	const authors = [

@@ -65,6 +65,18 @@
 	}
 	
 	.content {
+		position: relative;
 		font-size: 15px;
+		-webkit-line-clamp: 6;
+		
+		&::before {
+			position: absolute;
+			right: 0;
+			bottom: 0;
+			left: 0;
+			height: 50px;
+			content: '';
+			background: linear-gradient(180deg, rgba(23, 23, 26, 0) 0%, #17171A 100%);
+		}
 	}
 }
