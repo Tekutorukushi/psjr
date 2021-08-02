@@ -21,3 +21,10 @@
   background: #232327;
   border-radius: 6px;
 }
+
+@media (max-width: 600px) {
+  
+  .container {
+    padding: 24px;
+  }
+}

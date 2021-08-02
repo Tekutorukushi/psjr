@@ -5,9 +5,9 @@ import { $searchIsOpen, closeSearch } from './model';
 import { InputSearch } from '@app/ui/input_search';
 import { IconCancel } from '@app/ui/icons';
 
-import style from './search_modal.module.scss'
 import { SearchAuthorCard } from '@app/ui/search/search_author_card';
 import { SearchCountryCard } from '@app/ui/search/search_country_card';
+import style from './search_modal.module.scss'
 
 export const SearchModal = () => {
   const isOpen = useStore($searchIsOpen);
@@ -67,7 +67,7 @@ export const SearchModal = () => {
       <div className={style.body}>
         <InputSearch placeholder='Поиск' />
         <div className={style.list}>
-          {renderCountries()}
+          {renderAuthors()}
         </div>
       </div>
     </BaseModal>
